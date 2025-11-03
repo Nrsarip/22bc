@@ -1,0 +1,19 @@
+{
+  "name": "nitbit-creative-site",
+  "version": "1.0.0",
+  "description": "NitBit Creative marketing site with discovery call and contact backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "nitbit",
+    "creative",
+    "cpg",
+    "landing-page"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}
