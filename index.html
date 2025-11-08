@@ -365,6 +365,222 @@
         box-shadow: 0 15px 30px rgba(5, 11, 26, 0.3);
       }
 
+      .ticker-section {
+        margin: 5rem 0 0;
+        padding: 3.5rem 0;
+        display: grid;
+        gap: 2.5rem;
+        position: relative;
+      }
+
+      .ticker-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 70%);
+        border-radius: 28px;
+        z-index: -1;
+      }
+
+      .ticker-intro {
+        max-width: 760px;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .ticker-intro p {
+        color: var(--text-secondary);
+      }
+
+      .ticker-group {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .ticker-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 1.2rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--white);
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+        width: fit-content;
+        box-shadow: 0 12px 32px rgba(5, 11, 26, 0.35);
+      }
+
+      .ticker-viewport {
+        overflow: hidden;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: linear-gradient(120deg, rgba(7, 16, 36, 0.85), rgba(30, 52, 88, 0.55));
+        position: relative;
+        padding: 0.75rem 0;
+        mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+      }
+
+      .ticker-track {
+        --ticker-duration: 38s;
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        width: max-content;
+        animation: ticker-left var(--ticker-duration) linear infinite;
+      }
+
+      .ticker-track[data-direction='right'] {
+        animation-name: ticker-right;
+      }
+
+      .ticker-track:hover {
+        animation-play-state: paused;
+      }
+
+      .ticker-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.55rem 1rem;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 14px 30px rgba(5, 11, 26, 0.35);
+        white-space: nowrap;
+      }
+
+      .ticker-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--white);
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+      }
+
+      .logo-meta {
+        background: linear-gradient(135deg, #1877f2, #00a4ff);
+      }
+
+      .logo-instagram {
+        background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+      }
+
+      .logo-tiktok {
+        background: linear-gradient(135deg, #00f7ef, #ff0050);
+      }
+
+      .logo-youtube {
+        background: linear-gradient(135deg, #ff0000, #ff5e5e);
+      }
+
+      .logo-snapchat {
+        background: linear-gradient(135deg, #fffc00, #ffd500);
+        color: #050b1a;
+      }
+
+      .logo-pinterest {
+        background: linear-gradient(135deg, #bd081c, #ff3366);
+      }
+
+      .logo-linkedin {
+        background: linear-gradient(135deg, #0a66c2, #4f9bff);
+      }
+
+      .logo-x {
+        background: linear-gradient(135deg, #0f1419, #2f3844);
+      }
+
+      .logo-tradedesk {
+        background: linear-gradient(135deg, #00b5e2, #0093c4);
+      }
+
+      .logo-dv360 {
+        background: linear-gradient(135deg, #34a853, #66bb6a);
+      }
+
+      .logo-amazon {
+        background: linear-gradient(135deg, #ff9900, #ffb347);
+        color: #1b1f2a;
+      }
+
+      .logo-stackadapt {
+        background: linear-gradient(135deg, #4c3cff, #6a5bff);
+      }
+
+      .logo-yahoo {
+        background: linear-gradient(135deg, #410093, #7b1cd6);
+      }
+
+      .logo-mediamath {
+        background: linear-gradient(135deg, #ff5b5b, #ff8a5c);
+      }
+
+      .logo-hulu {
+        background: linear-gradient(135deg, #1ce783, #16c26a);
+        color: #041b14;
+      }
+
+      .logo-roku {
+        background: linear-gradient(135deg, #6f1ab1, #a044ff);
+      }
+
+      .logo-spotify {
+        background: linear-gradient(135deg, #1db954, #1ed760);
+        color: #041b14;
+      }
+
+      .logo-nyt {
+        background: linear-gradient(135deg, #111111, #3a3a3a);
+      }
+
+      .logo-condenast {
+        background: linear-gradient(135deg, #0f1a2e, #3f4c68);
+      }
+
+      .logo-vox {
+        background: linear-gradient(135deg, #ffbe0b, #ff9f1c);
+        color: #201305;
+      }
+
+      .ticker-name {
+        font-weight: 600;
+        color: var(--white);
+        letter-spacing: 0.01em;
+      }
+
+      @keyframes ticker-left {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes ticker-right {
+        from {
+          transform: translateX(-50%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ticker-track {
+          animation: none;
+        }
+      }
+
       .cta {
         margin: 6rem 0 0;
         padding: 3.5rem;
@@ -726,6 +942,201 @@
           <div class="channel-pill" data-reveal data-reveal-delay="0.3s">Amazon & Retail Media</div>
           <div class="channel-pill" data-reveal data-reveal-delay="0.35s">Out of Home</div>
           <div class="channel-pill" data-reveal data-reveal-delay="0.4s">Product Launch Kits</div>
+        </div>
+      </section>
+
+      <section class="ticker-section" aria-label="Launch partners and publishers" data-reveal>
+        <div class="ticker-intro" data-reveal data-reveal-delay="0.05s">
+          <p class="pill">Where we launch</p>
+          <h2 class="section-title">Trusted social, programmatic, and publisher placements.</h2>
+          <p>
+            Our campaigns are crafted to perform on the platforms that matter. From paid social sprints
+            to premium direct buys, your assets ship ready for the media plans you already have queued.
+          </p>
+        </div>
+
+        <div class="ticker-group" data-reveal data-reveal-delay="0.1s">
+          <div class="ticker-label">Paid Social Launch Partners</div>
+          <div class="ticker-viewport">
+            <div class="ticker-track" style="--ticker-duration: 34s;">
+              <div class="ticker-item">
+                <span class="ticker-icon logo-meta" aria-hidden="true">M</span>
+                <span class="ticker-name">Meta</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-instagram" aria-hidden="true">IG</span>
+                <span class="ticker-name">Instagram</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-tiktok" aria-hidden="true">TT</span>
+                <span class="ticker-name">TikTok</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-youtube" aria-hidden="true">YT</span>
+                <span class="ticker-name">YouTube</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-snapchat" aria-hidden="true">SC</span>
+                <span class="ticker-name">Snapchat</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-pinterest" aria-hidden="true">P</span>
+                <span class="ticker-name">Pinterest</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-linkedin" aria-hidden="true">in</span>
+                <span class="ticker-name">LinkedIn</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-x" aria-hidden="true">X</span>
+                <span class="ticker-name">X</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-meta" aria-hidden="true">M</span>
+                <span class="ticker-name">Meta</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-instagram" aria-hidden="true">IG</span>
+                <span class="ticker-name">Instagram</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-tiktok" aria-hidden="true">TT</span>
+                <span class="ticker-name">TikTok</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-youtube" aria-hidden="true">YT</span>
+                <span class="ticker-name">YouTube</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-snapchat" aria-hidden="true">SC</span>
+                <span class="ticker-name">Snapchat</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-pinterest" aria-hidden="true">P</span>
+                <span class="ticker-name">Pinterest</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-linkedin" aria-hidden="true">in</span>
+                <span class="ticker-name">LinkedIn</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-x" aria-hidden="true">X</span>
+                <span class="ticker-name">X</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ticker-group" data-reveal data-reveal-delay="0.15s">
+          <div class="ticker-label">Programmatic & Retail DSPs</div>
+          <div class="ticker-viewport">
+            <div class="ticker-track" data-direction="right" style="--ticker-duration: 40s;">
+              <div class="ticker-item">
+                <span class="ticker-icon logo-tradedesk" aria-hidden="true">TTD</span>
+                <span class="ticker-name">The Trade Desk</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-dv360" aria-hidden="true">DV</span>
+                <span class="ticker-name">Google DV360</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-amazon" aria-hidden="true">A</span>
+                <span class="ticker-name">Amazon DSP</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-stackadapt" aria-hidden="true">SA</span>
+                <span class="ticker-name">StackAdapt</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-yahoo" aria-hidden="true">Y!</span>
+                <span class="ticker-name">Yahoo DSP</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-mediamath" aria-hidden="true">MM</span>
+                <span class="ticker-name">MediaMath</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-tradedesk" aria-hidden="true">TTD</span>
+                <span class="ticker-name">The Trade Desk</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-dv360" aria-hidden="true">DV</span>
+                <span class="ticker-name">Google DV360</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-amazon" aria-hidden="true">A</span>
+                <span class="ticker-name">Amazon DSP</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-stackadapt" aria-hidden="true">SA</span>
+                <span class="ticker-name">StackAdapt</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-yahoo" aria-hidden="true">Y!</span>
+                <span class="ticker-name">Yahoo DSP</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-mediamath" aria-hidden="true">MM</span>
+                <span class="ticker-name">MediaMath</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ticker-group" data-reveal data-reveal-delay="0.2s">
+          <div class="ticker-label">Premium Direct Publishers</div>
+          <div class="ticker-viewport">
+            <div class="ticker-track" style="--ticker-duration: 36s;">
+              <div class="ticker-item">
+                <span class="ticker-icon logo-hulu" aria-hidden="true">Hu</span>
+                <span class="ticker-name">Hulu</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-roku" aria-hidden="true">Ro</span>
+                <span class="ticker-name">Roku</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-spotify" aria-hidden="true">Sp</span>
+                <span class="ticker-name">Spotify</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-nyt" aria-hidden="true">NYT</span>
+                <span class="ticker-name">The New York Times</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-condenast" aria-hidden="true">CN</span>
+                <span class="ticker-name">Condé Nast</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-vox" aria-hidden="true">V</span>
+                <span class="ticker-name">Vox Media</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-hulu" aria-hidden="true">Hu</span>
+                <span class="ticker-name">Hulu</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-roku" aria-hidden="true">Ro</span>
+                <span class="ticker-name">Roku</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-spotify" aria-hidden="true">Sp</span>
+                <span class="ticker-name">Spotify</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-nyt" aria-hidden="true">NYT</span>
+                <span class="ticker-name">The New York Times</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-condenast" aria-hidden="true">CN</span>
+                <span class="ticker-name">Condé Nast</span>
+              </div>
+              <div class="ticker-item">
+                <span class="ticker-icon logo-vox" aria-hidden="true">V</span>
+                <span class="ticker-name">Vox Media</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
