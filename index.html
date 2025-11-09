@@ -3,683 +3,592 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NitBit Creative | AI-Powered CPG Studio</title>
+    <title>Aseby Studio | AI-Powered CPG Creative Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #050b1a;
-        --bg-secondary: #07102a;
-        --bg-elevated: rgba(16, 32, 64, 0.6);
-        --blue: #4f9bff;
-        --blue-bright: #5ecbff;
-        --text-primary: #f5f8ff;
-        --text-secondary: #c6d2f8;
-        --white: #ffffff;
-        --white-soft: rgba(255, 255, 255, 0.08);
-        --white-bright: rgba(255, 255, 255, 0.65);
-        --accent: linear-gradient(135deg, #2765ff 0%, #7f7bff 100%);
-        color-scheme: dark;
+        --color-primary: #623cea;
+        --color-secondary: #54426b;
+        --color-cream: #e7dfc6;
+        --color-cloud: #e9f1f7;
+        --color-ink: #1b1230;
+        --color-ink-soft: rgba(27, 18, 48, 0.75);
+        --color-ink-muted: rgba(27, 18, 48, 0.55);
+        --glass: rgba(233, 241, 247, 0.16);
+        --glass-strong: rgba(233, 241, 247, 0.28);
+        --border: rgba(233, 241, 247, 0.35);
+        --shadow: rgba(84, 66, 107, 0.25);
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
       html {
         scroll-behavior: smooth;
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
       body {
-        font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+        font-family: 'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif;
         background:
-          radial-gradient(circle at 20% 20%, rgba(79, 155, 255, 0.15), transparent 60%),
-          radial-gradient(circle at 80% 0%, rgba(126, 123, 255, 0.16), transparent 55%),
-          linear-gradient(160deg, rgba(255, 255, 255, 0.03) 0%, rgba(5, 11, 26, 0.95) 65%),
-          var(--bg);
-        color: var(--text-primary);
+          radial-gradient(circle at 12% 18%, rgba(98, 60, 234, 0.35), transparent 45%),
+          radial-gradient(circle at 88% 8%, rgba(231, 223, 198, 0.35), transparent 45%),
+          radial-gradient(circle at 50% 100%, rgba(84, 66, 107, 0.35), transparent 55%),
+          var(--color-cloud);
+        color: var(--color-ink);
         min-height: 100vh;
         line-height: 1.6;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(233, 241, 247, 0.92) 0%, rgba(231, 223, 198, 0.55) 100%);
+        opacity: 0.35;
+        pointer-events: none;
+        z-index: -2;
       }
 
       ::selection {
-        background: rgba(94, 203, 255, 0.35);
-        color: var(--white);
+        background: rgba(98, 60, 234, 0.22);
+        color: var(--color-ink);
       }
 
       header {
         position: sticky;
         top: 0;
-        z-index: 10;
-        backdrop-filter: blur(18px);
-        background: linear-gradient(180deg, rgba(5, 11, 26, 0.95), rgba(5, 11, 26, 0.65));
-        border-bottom: 1px solid rgba(95, 155, 255, 0.1);
-        box-shadow: 0 12px 40px rgba(5, 11, 26, 0.35);
+        z-index: 50;
+        backdrop-filter: blur(24px);
+        background: linear-gradient(120deg, rgba(233, 241, 247, 0.65), rgba(231, 223, 198, 0.45));
+        border-bottom: 1px solid rgba(84, 66, 107, 0.12);
       }
 
       .nav {
-        max-width: 1180px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 1.3rem 2rem;
+        padding: 1.2rem 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 2rem;
       }
 
       .logo {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
         font-weight: 800;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--text-primary);
+        color: var(--color-primary);
+        text-decoration: none;
       }
 
       nav ul {
+        list-style: none;
         display: flex;
         align-items: center;
         gap: 1.75rem;
-        list-style: none;
       }
 
       nav a {
         text-decoration: none;
-        font-weight: 500;
-        color: var(--text-secondary);
-        transition: color 0.2s ease;
+        font-weight: 600;
+        color: var(--color-ink-muted);
+        position: relative;
+        transition: color 0.25s ease, transform 0.25s ease;
       }
 
-      nav a:hover {
-        color: var(--text-primary);
+      nav a::after {
+        content: '';
+        position: absolute;
+        inset: auto 0 -0.45rem 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+        opacity: 0;
+        transform: scaleX(0.6);
+        transition: opacity 0.3s ease, transform 0.3s ease;
       }
 
+      nav a:hover,
+      nav a:focus-visible,
       nav a[aria-current='page'] {
-        color: var(--text-primary);
+        color: var(--color-secondary);
+      }
+
+      nav a:hover::after,
+      nav a:focus-visible::after,
+      nav a[aria-current='page']::after {
+        opacity: 1;
+        transform: scaleX(1);
       }
 
       .btn-primary {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        background: var(--accent);
-        color: #0c1022;
-        padding: 0.85rem 1.6rem;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 0.9rem 1.7rem;
         border-radius: 999px;
         font-weight: 700;
         text-decoration: none;
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        box-shadow: 0 16px 40px rgba(79, 155, 255, 0.25);
-        border: none;
+        background: linear-gradient(135deg, rgba(98, 60, 234, 0.92), rgba(84, 66, 107, 0.92));
+        color: #fff;
+        border: 1px solid rgba(233, 241, 247, 0.35);
+        box-shadow: 0 25px 60px rgba(84, 66, 107, 0.22);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
         cursor: pointer;
-        font-family: inherit;
       }
 
-      .btn-primary::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.3) 50%, transparent 80%);
-        transform: translateX(-100%);
-        transition: transform 0.45s ease;
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 28px 70px rgba(98, 60, 234, 0.28);
+        background: linear-gradient(135deg, rgba(98, 60, 234, 1), rgba(84, 66, 107, 1));
       }
 
-      .btn-primary:hover {
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 0.85rem 1.6rem;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--color-ink);
+        background: rgba(233, 241, 247, 0.75);
+        border: 1px solid rgba(84, 66, 107, 0.16);
+        transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .btn-secondary:hover,
+      .btn-secondary:focus-visible {
+        background: rgba(231, 223, 198, 0.9);
         transform: translateY(-2px);
-        box-shadow: 0 20px 45px rgba(79, 155, 255, 0.3);
-        color: #020614;
-      }
-
-      .btn-primary:hover::after {
-        transform: translateX(0%);
+        box-shadow: 0 20px 45px rgba(231, 223, 198, 0.35);
       }
 
       main {
-        max-width: 1180px;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 0 2rem 8rem;
+        padding: 0 2rem 6rem;
+      }
+
+      section {
+        padding: 5.5rem 0;
+        position: relative;
       }
 
       .hero {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 3rem;
-        padding: 8rem 0 5rem;
+        min-height: 92vh;
+        display: flex;
         align-items: center;
         position: relative;
+        padding-top: 5rem;
+        color: #fff;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(120deg, rgba(27, 18, 48, 0.85), rgba(27, 18, 48, 0.15)),
+          url('images-295cb3e840b363ae22117e0d13a4fb22.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: saturate(1.05);
+        z-index: -2;
       }
 
       .hero::after {
         content: '';
         position: absolute;
-        inset: 10% 5% auto;
-        height: 65%;
-        border-radius: 36px;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 70%);
+        inset: 0;
+        background: linear-gradient(160deg, rgba(27, 18, 48, 0.65), rgba(98, 60, 234, 0.35));
         z-index: -1;
       }
 
-      .hero h1 {
-        font-size: clamp(2.8rem, 6vw, 4.5rem);
-        line-height: 1.05;
-        margin-bottom: 1.4rem;
-        letter-spacing: -0.01em;
+      .hero-content {
         display: grid;
-        gap: 0.8rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        width: 100%;
+        align-items: center;
       }
 
-      .hero h1 span.highlight {
-        display: inline-flex;
-        align-self: flex-start;
-        padding: 0.25em 0.6em;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.16);
-        color: var(--white);
-        font-size: clamp(0.95rem, 2vw, 1.1rem);
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08);
+      .hero-copy {
+        padding: 3rem;
+        border-radius: 28px;
+        background: rgba(27, 18, 48, 0.45);
+        border: 1px solid rgba(233, 241, 247, 0.32);
+        backdrop-filter: blur(24px);
+        box-shadow: 0 35px 90px rgba(12, 7, 28, 0.45);
       }
 
-      .hero p {
-        font-size: 1.1rem;
-        color: var(--text-secondary);
-        margin-bottom: 2rem;
-      }
-
-      .hero-card {
-        background: linear-gradient(160deg, rgba(23, 40, 80, 0.8), rgba(10, 20, 40, 0.45));
-        padding: 2rem;
-        border-radius: 24px;
-        box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        position: relative;
-        overflow: hidden;
-        animation: float 8s ease-in-out infinite alternate;
-      }
-
-      .hero-card::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at 30% 20%, rgba(94, 203, 255, 0.28), transparent 55%);
-        pointer-events: none;
-      }
-
-      .hero-card h2 {
-        font-size: 1.65rem;
-        margin-bottom: 1rem;
-      }
-
-      .hero-card ul {
-        list-style: none;
-        display: grid;
-        gap: 0.85rem;
-        color: var(--text-secondary);
-      }
-
-      .hero-card li span {
+      .hero-copy .eyebrow {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        width: 1.8rem;
-        height: 1.8rem;
-        border-radius: 50%;
-        background: rgba(94, 203, 255, 0.15);
-        color: var(--blue-bright);
-        margin-right: 0.75rem;
-        font-weight: 700;
-        font-size: 0.9rem;
-      }
-
-      .metrics {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-        margin: 3rem 0 5rem;
-      }
-
-      .metric-card {
-        padding: 1.75rem;
-        border-radius: 20px;
-        background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(12, 24, 48, 0.7));
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(6px);
-      }
-
-      .metric-card h3 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-        color: var(--blue-bright);
-      }
-
-      .metric-card p {
-        color: var(--text-secondary);
-      }
-
-      .section-title {
-        font-size: clamp(2rem, 3vw, 3rem);
-        margin-bottom: 1.5rem;
-      }
-
-      .section-subtitle {
-        color: var(--text-secondary);
-        max-width: 760px;
-        margin-bottom: 3rem;
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.4rem 1.2rem;
-        border-radius: 999px;
-        background: rgba(79, 155, 255, 0.12);
-        color: var(--blue-bright);
+        gap: 0.4rem;
         font-size: 0.85rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.22em;
         text-transform: uppercase;
-      }
-
-      .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.75rem;
-      }
-
-      .card {
-        background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(7, 16, 42, 0.6));
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 20px;
-        padding: 1.75rem;
-        display: grid;
-        gap: 0.75rem;
-        transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-        box-shadow: 0 20px 40px rgba(5, 11, 26, 0.35);
-      }
-
-      .card:hover {
-        transform: translateY(-6px) scale(1.01);
-        border-color: rgba(126, 123, 255, 0.45);
-        box-shadow: 0 30px 50px rgba(5, 11, 26, 0.45);
-      }
-
-      .card h3 {
-        font-size: 1.25rem;
-      }
-
-      .card p {
-        color: var(--text-secondary);
-      }
-
-      .workflow {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .step {
-        padding: 1.5rem;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(8, 18, 36, 0.85));
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        position: relative;
-        box-shadow: 0 20px 38px rgba(5, 11, 26, 0.35);
-      }
-
-      .step::before {
-        content: attr(data-step);
-        position: absolute;
-        top: -12px;
-        left: 16px;
-        padding: 0.4rem 0.9rem;
+        font-weight: 600;
+        color: rgba(231, 223, 198, 0.85);
+        background: rgba(233, 241, 247, 0.12);
+        padding: 0.5rem 1rem;
         border-radius: 999px;
-        background: rgba(94, 203, 255, 0.18);
-        color: var(--blue-bright);
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
+        border: 1px solid rgba(231, 223, 198, 0.35);
+        margin-bottom: 1.75rem;
       }
 
-      .channels {
+      .hero-copy h1 {
+        font-size: clamp(2.8rem, 4vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+      }
+
+      .hero-copy p {
+        color: rgba(233, 241, 247, 0.85);
+        font-size: 1.05rem;
+        margin-bottom: 2.25rem;
+      }
+
+      .hero-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-top: 1.5rem;
-      }
-
-      .channel-pill {
-        padding: 0.6rem 1.3rem;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        color: var(--white-bright);
-        background: rgba(255, 255, 255, 0.06);
-        font-weight: 500;
-        letter-spacing: 0.02em;
-        box-shadow: 0 15px 30px rgba(5, 11, 26, 0.3);
-      }
-
-      .ticker-section {
-        margin: 5rem 0 0;
-        padding: 3.5rem 0;
-        display: grid;
-        gap: 2.5rem;
-        position: relative;
-      }
-
-      .ticker-section::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 70%);
-        border-radius: 28px;
-        z-index: -1;
-      }
-
-      .ticker-intro {
-        max-width: 760px;
-        display: grid;
-        gap: 0.75rem;
-      }
-
-      .ticker-intro p {
-        color: var(--text-secondary);
-      }
-
-      .ticker-group {
-        display: grid;
         gap: 1rem;
       }
 
-      .ticker-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.45rem 1.2rem;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.12);
-        color: var(--white);
-        font-size: 0.85rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 600;
-        width: fit-content;
-        box-shadow: 0 12px 32px rgba(5, 11, 26, 0.35);
+      .hero-metrics {
+        display: grid;
+        gap: 1.5rem;
+        padding: 2.75rem;
+        border-radius: 28px;
+        background: rgba(233, 241, 247, 0.1);
+        backdrop-filter: blur(22px);
+        border: 1px solid rgba(233, 241, 247, 0.32);
+        color: rgba(233, 241, 247, 0.95);
       }
 
-      .ticker-viewport {
+      .metric {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .metric span {
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(231, 223, 198, 0.7);
+      }
+
+      .metric strong {
+        font-size: 2.3rem;
+        font-weight: 800;
+      }
+
+      .ticker {
         overflow: hidden;
-        border-radius: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        background: linear-gradient(120deg, rgba(7, 16, 36, 0.85), rgba(30, 52, 88, 0.55));
-        position: relative;
-        padding: 0.75rem 0;
-        mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+        border-radius: 20px;
+        border: 1px solid rgba(84, 66, 107, 0.12);
+        background: rgba(233, 241, 247, 0.65);
+        box-shadow: 0 16px 40px rgba(84, 66, 107, 0.12);
+        margin-bottom: 2.5rem;
       }
 
       .ticker-track {
-        --ticker-duration: 38s;
         display: flex;
-        align-items: center;
         gap: 1.75rem;
-        width: max-content;
-        animation: ticker-left var(--ticker-duration) linear infinite;
+        padding: 1.1rem 2rem;
+        animation: scroll 32s linear infinite;
+        will-change: transform;
       }
 
-      .ticker-track[data-direction='right'] {
-        animation-name: ticker-right;
-      }
-
-      .ticker-track:hover {
+      .ticker:hover .ticker-track {
         animation-play-state: paused;
       }
 
       .ticker-item {
+        padding: 0.6rem 1.4rem;
+        border-radius: 999px;
+        background: rgba(98, 60, 234, 0.08);
+        border: 1px solid rgba(98, 60, 234, 0.18);
+        color: var(--color-secondary);
+        font-weight: 600;
         display: inline-flex;
         align-items: center;
-        gap: 0.75rem;
-        padding: 0.55rem 1rem;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        box-shadow: 0 14px 30px rgba(5, 11, 26, 0.35);
-        white-space: nowrap;
+        gap: 0.65rem;
       }
 
-      .ticker-icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        color: var(--white);
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
+      .ticker-item svg,
+      .ticker-item img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+      }
+
+      .section-heading {
+        max-width: 700px;
+        margin-bottom: 3.5rem;
+      }
+
+      .section-heading span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.22em;
         text-transform: uppercase;
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
-      }
-
-      .logo-meta {
-        background: linear-gradient(135deg, #1877f2, #00a4ff);
-      }
-
-      .logo-instagram {
-        background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
-      }
-
-      .logo-tiktok {
-        background: linear-gradient(135deg, #00f7ef, #ff0050);
-      }
-
-      .logo-youtube {
-        background: linear-gradient(135deg, #ff0000, #ff5e5e);
-      }
-
-      .logo-snapchat {
-        background: linear-gradient(135deg, #fffc00, #ffd500);
-        color: #050b1a;
-      }
-
-      .logo-pinterest {
-        background: linear-gradient(135deg, #bd081c, #ff3366);
-      }
-
-      .logo-linkedin {
-        background: linear-gradient(135deg, #0a66c2, #4f9bff);
-      }
-
-      .logo-x {
-        background: linear-gradient(135deg, #0f1419, #2f3844);
-      }
-
-      .logo-tradedesk {
-        background: linear-gradient(135deg, #00b5e2, #0093c4);
-      }
-
-      .logo-dv360 {
-        background: linear-gradient(135deg, #34a853, #66bb6a);
-      }
-
-      .logo-amazon {
-        background: linear-gradient(135deg, #ff9900, #ffb347);
-        color: #1b1f2a;
-      }
-
-      .logo-stackadapt {
-        background: linear-gradient(135deg, #4c3cff, #6a5bff);
-      }
-
-      .logo-yahoo {
-        background: linear-gradient(135deg, #410093, #7b1cd6);
-      }
-
-      .logo-mediamath {
-        background: linear-gradient(135deg, #ff5b5b, #ff8a5c);
-      }
-
-      .logo-hulu {
-        background: linear-gradient(135deg, #1ce783, #16c26a);
-        color: #041b14;
-      }
-
-      .logo-roku {
-        background: linear-gradient(135deg, #6f1ab1, #a044ff);
-      }
-
-      .logo-spotify {
-        background: linear-gradient(135deg, #1db954, #1ed760);
-        color: #041b14;
-      }
-
-      .logo-nyt {
-        background: linear-gradient(135deg, #111111, #3a3a3a);
-      }
-
-      .logo-condenast {
-        background: linear-gradient(135deg, #0f1a2e, #3f4c68);
-      }
-
-      .logo-vox {
-        background: linear-gradient(135deg, #ffbe0b, #ff9f1c);
-        color: #201305;
-      }
-
-      .ticker-name {
         font-weight: 600;
-        color: var(--white);
-        letter-spacing: 0.01em;
+        color: var(--color-secondary);
+        background: rgba(98, 60, 234, 0.12);
+        padding: 0.45rem 0.95rem;
+        border-radius: 999px;
+        border: 1px solid rgba(98, 60, 234, 0.25);
+        margin-bottom: 1.5rem;
       }
 
-      @keyframes ticker-left {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
+      .section-heading h2 {
+        font-size: clamp(2.4rem, 3.1vw, 3.4rem);
+        line-height: 1.15;
+        color: var(--color-ink);
+        margin-bottom: 1.2rem;
+      }
+
+      .section-heading p {
+        color: var(--color-ink-muted);
+        font-size: 1.05rem;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.6rem;
+      }
+
+      .glass-card {
+        background: var(--glass);
+        border: 1px solid rgba(233, 241, 247, 0.45);
+        border-radius: 22px;
+        padding: 2rem;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 24px 60px rgba(84, 66, 107, 0.12);
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .glass-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 35px 80px rgba(98, 60, 234, 0.18);
+      }
+
+      .glass-card h3 {
+        font-size: 1.35rem;
+        color: var(--color-primary);
+      }
+
+      .glass-card p {
+        color: var(--color-ink-muted);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        background: rgba(98, 60, 234, 0.16);
+        border: 1px solid rgba(98, 60, 234, 0.28);
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .workflow {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.75rem;
+        counter-reset: step;
+      }
+
+      .workflow-step {
+        position: relative;
+        padding: 2.4rem 2rem 2rem 2rem;
+        border-radius: 24px;
+        background: rgba(233, 241, 247, 0.18);
+        border: 1px solid rgba(231, 223, 198, 0.4);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 24px 70px rgba(84, 66, 107, 0.14);
+        color: var(--color-ink);
+      }
+
+      .workflow-step::before {
+        counter-increment: step;
+        content: counter(step, decimal-leading-zero);
+        position: absolute;
+        top: -22px;
+        left: 24px;
+        background: linear-gradient(135deg, rgba(98, 60, 234, 0.95), rgba(84, 66, 107, 0.95));
+        color: #fff;
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+        border: 1px solid rgba(233, 241, 247, 0.45);
+        box-shadow: 0 14px 32px rgba(98, 60, 234, 0.35);
+        font-weight: 700;
+        letter-spacing: 0.18em;
+      }
+
+      .workflow-step h3 {
+        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+        color: var(--color-secondary);
+      }
+
+      .workflow-step p {
+        color: var(--color-ink-muted);
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+      }
+
+      .showcase-item {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        background: rgba(27, 18, 48, 0.12);
+        min-height: 240px;
+        box-shadow: 0 30px 70px rgba(27, 18, 48, 0.16);
+      }
+
+      .showcase-item::after {
+        content: attr(data-caption);
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        padding: 0.45rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(233, 241, 247, 0.85);
+        color: var(--color-secondary);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .showcase-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.05);
+        transition: transform 0.6s ease;
+      }
+
+      .showcase-item:hover img {
+        transform: scale(1.06);
+      }
+
+      .showcase-item.large {
+        grid-column: span 2;
+        min-height: 320px;
+      }
+
+      @media (max-width: 780px) {
+        .showcase-item.large {
+          grid-column: span 1;
         }
       }
 
-      @keyframes ticker-right {
-        from {
-          transform: translateX(-50%);
-        }
-        to {
-          transform: translateX(0);
-        }
+      .channel-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
       }
 
-      @media (prefers-reduced-motion: reduce) {
-        .ticker-track {
-          animation: none;
-        }
+      .channel-pill {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 1.1rem;
+        border-radius: 18px;
+        background: rgba(233, 241, 247, 0.7);
+        border: 1px solid rgba(84, 66, 107, 0.15);
+        color: var(--color-secondary);
+        font-weight: 600;
+        box-shadow: 0 18px 40px rgba(84, 66, 107, 0.1);
+      }
+
+      .channel-pill span {
+        width: 38px;
+        height: 38px;
+        border-radius: 14px;
+        background: rgba(98, 60, 234, 0.16);
+        border: 1px solid rgba(98, 60, 234, 0.3);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-primary);
+        font-weight: 700;
       }
 
       .cta {
-        margin: 6rem 0 0;
-        padding: 3.5rem;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(10, 33, 62, 0.92));
-        border-radius: 26px;
-        border: 1px solid rgba(255, 255, 255, 0.22);
         display: grid;
-        gap: 1.4rem;
-        justify-items: start;
-        text-align: left;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 40px 80px rgba(5, 11, 26, 0.45);
-      }
-
-      .cta::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.22), transparent 55%);
-        pointer-events: none;
-      }
-
-      .cta p {
-        max-width: 560px;
-        color: var(--text-secondary);
-      }
-
-      .cta-layout {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2.5rem;
-        margin-top: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        align-items: center;
       }
 
-      .cta .btn-primary {
-        box-shadow: 0 18px 42px rgba(79, 155, 255, 0.35);
+      .cta-details {
+        background: rgba(233, 241, 247, 0.18);
+        border: 1px solid rgba(233, 241, 247, 0.45);
+        padding: 2.6rem;
+        border-radius: 26px;
+        backdrop-filter: blur(18px);
+        box-shadow: 0 25px 70px rgba(84, 66, 107, 0.16);
       }
 
-      footer {
-        margin-top: 4rem;
-        padding: 3rem 0;
-        text-align: center;
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-        border-top: 1px solid rgba(79, 155, 255, 0.1);
+      .cta-details h3 {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+        color: var(--color-secondary);
       }
 
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-
-      .contact-card {
-        background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(6, 14, 30, 0.78));
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 18px;
-        padding: 1.75rem;
-        display: grid;
-        gap: 0.65rem;
-        box-shadow: 0 20px 40px rgba(5, 11, 26, 0.3);
-      }
-
-      .contact-card span {
-        color: var(--blue-bright);
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        font-size: 0.75rem;
-      }
-
-      .contact-card a {
-        color: var(--white);
-        font-weight: 600;
-        text-decoration: none;
+      .cta-details p {
+        color: var(--color-ink-muted);
+        margin-bottom: 1.5rem;
       }
 
       .contact-form {
-        background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(6, 14, 30, 0.9));
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 20px;
-        padding: 1.75rem;
+        background: rgba(233, 241, 247, 0.22);
+        border: 1px solid rgba(231, 223, 198, 0.45);
+        border-radius: 26px;
+        padding: 2.6rem;
         display: grid;
         gap: 1.5rem;
-        align-content: start;
-        box-shadow: 0 30px 60px rgba(5, 11, 26, 0.4);
+        box-shadow: 0 25px 70px rgba(84, 66, 107, 0.16);
+        backdrop-filter: blur(18px);
       }
 
-      .contact-form h2,
-      .contact-form h3 {
-        font-size: 1.2rem;
-      }
-
-      .form-note {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
+      .contact-form h2 {
+        font-size: 2rem;
+        color: var(--color-secondary);
       }
 
       .form-grid {
@@ -687,512 +596,436 @@
         gap: 1.2rem;
       }
 
-      .form-grid.two-column {
+      .form-grid.two {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem 1.25rem;
+        gap: 1.2rem;
       }
 
       .input-group {
         display: grid;
-        gap: 0.5rem;
+        gap: 0.6rem;
       }
 
       .input-group label {
-        font-size: 0.85rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: var(--white-bright);
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: var(--color-secondary);
       }
 
       .input-group input,
-      .input-group textarea,
-      .input-group select {
-        width: 100%;
-        padding: 0.85rem 1rem;
-        border-radius: 12px;
-        border: 1px solid rgba(94, 203, 255, 0.2);
-        background: rgba(4, 12, 28, 0.85);
-        color: var(--text-primary);
-        font-family: inherit;
-        font-size: 1rem;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-      }
-
       .input-group textarea {
-        min-height: 120px;
-        resize: vertical;
+        border-radius: 16px;
+        border: 1px solid rgba(84, 66, 107, 0.25);
+        padding: 0.85rem 1rem;
+        font-family: inherit;
+        background: rgba(233, 241, 247, 0.65);
+        color: var(--color-ink);
+        transition: border 0.2s ease, box-shadow 0.2s ease;
       }
 
       .input-group input:focus,
-      .input-group textarea:focus,
-      .input-group select:focus {
-        border-color: rgba(255, 255, 255, 0.45);
-        box-shadow: 0 0 0 3px rgba(126, 123, 255, 0.25);
-        transform: translateY(-1px);
+      .input-group textarea:focus {
         outline: none;
+        border-color: rgba(98, 60, 234, 0.65);
+        box-shadow: 0 0 0 4px rgba(98, 60, 234, 0.15);
+      }
+
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      .form-note {
+        font-size: 0.85rem;
+        color: var(--color-ink-muted);
       }
 
       .form-status {
-        font-size: 0.95rem;
-        min-height: 1.2rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--color-secondary);
+        min-height: 1.4em;
       }
 
       .form-status.sending {
-        color: var(--blue-bright);
+        color: var(--color-primary);
       }
 
       .form-status.success {
-        color: #5ecbff;
+        color: #1f8a4d;
       }
 
       .form-status.error {
-        color: #ff8383;
+        color: #c0392b;
       }
 
-      [data-reveal] {
+      footer {
+        padding: 3rem 2rem 4rem;
+        text-align: center;
+        color: var(--color-ink-muted);
+        font-size: 0.92rem;
+      }
+
+      .cursor-orb {
+        position: fixed;
+        width: 360px;
+        height: 360px;
+        background: radial-gradient(circle, rgba(98, 60, 234, 0.22), transparent 65%);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate3d(-50%, -50%, 0);
+        z-index: 1;
+        mix-blend-mode: screen;
+        filter: blur(0px);
+        opacity: 0.85;
+        transition: opacity 0.4s ease;
+      }
+
+      @media (pointer: coarse), (hover: none) {
+        .cursor-orb {
+          display: none;
+        }
+      }
+
+      [data-animate] {
         opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.7s ease, transform 0.7s ease;
-        will-change: opacity, transform;
+        transform: translateY(35px);
+        transition: opacity 0.9s ease, transform 0.9s ease;
       }
 
-      [data-reveal].is-visible {
+      [data-animate].is-visible {
         opacity: 1;
         transform: translateY(0);
       }
 
-      @keyframes float {
-        from {
-          transform: translateY(0px) rotate(-0.3deg);
-        }
-
+      @keyframes scroll {
         to {
-          transform: translateY(-12px) rotate(0.3deg);
+          transform: translateX(-50%);
         }
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 960px) {
         .nav {
-          flex-direction: column;
-          gap: 1.5rem;
+          flex-wrap: wrap;
+          gap: 1rem;
         }
 
         nav ul {
+          width: 100%;
+          justify-content: flex-start;
           flex-wrap: wrap;
-          justify-content: center;
+          gap: 1rem 1.5rem;
         }
 
+        .hero {
+          min-height: auto;
+          padding: 5rem 0 4rem;
+        }
+
+        .hero-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
         main {
-          padding: 0 1.5rem 6rem;
+          padding: 0 1.5rem 5rem;
         }
 
-        .cta {
-          padding: 2.5rem;
+        .hero-copy,
+        .hero-metrics {
+          padding: 2.2rem;
         }
 
-        .cta-layout {
-          margin-top: 0.5rem;
+        section {
+          padding: 4.5rem 0;
         }
       }
     </style>
   </head>
   <body>
+    <div class="cursor-orb" aria-hidden="true"></div>
     <header>
       <div class="nav">
-        <div class="logo">NitBit Creative</div>
+        <a class="logo" href="#top">Aseby Studio</a>
         <nav>
           <ul>
             <li><a href="#services">Services</a></li>
             <li><a href="#workflow">Workflow</a></li>
-            <li><a href="#channels">Channels</a></li>
-            <li><a href="#contact">Discovery Call</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#distribution">Distribution</a></li>
+            <li><a href="#discovery">Discovery Call</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
-        <a class="btn-primary" href="#contact">Book a Discovery Call</a>
+        <a class="btn-secondary" href="#discovery">Book a session</a>
       </div>
     </header>
 
     <main>
-      <section class="hero" data-reveal>
-        <div data-reveal data-reveal-delay="0.05s">
-          <div class="pill">AI-Powered CPG Creative Studio</div>
-          <h1>
-            <span class="highlight">Early adopter priority</span>
-            Launch-ready visuals crafted with human creativity and AI precision.
-          </h1>
+      <section class="hero" id="top">
+        <div class="hero-content">
+          <div class="hero-copy" data-animate>
+            <span class="eyebrow">AI-native CPG creative studio</span>
+            <h1>Launch visuals that feel handcrafted and learn your brand in real time.</h1>
+            <p>
+              Aseby Studio fuses tactile set design, cinematic lighting, and a proprietary AI render engine
+              trained exclusively on your products. The result: glassy, conversion-ready assets delivered at the pace
+              of modern commerce.
+            </p>
+            <div class="hero-actions">
+              <a class="btn-primary" href="#discovery">Schedule your discovery call</a>
+              <a class="btn-secondary" href="#work">Explore our product work</a>
+            </div>
+          </div>
+          <div class="hero-metrics" data-animate data-animate-delay="0.15s">
+            <div class="metric">
+              <span>Production velocity</span>
+              <strong>3× faster</strong>
+              <p>AI-assisted retouching and video polish without sacrificing tactile quality.</p>
+            </div>
+            <div class="metric">
+              <span>Launch conversions</span>
+              <strong>+42%</strong>
+              <p>Average lift across social and retail media after refreshing hero assets with us.</p>
+            </div>
+            <div class="metric">
+              <span>Asset library</span>
+              <strong>24 hrs</strong>
+              <p>Delivery window for additional crops, aspect ratios, and channel-specific cutdowns.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="section-heading" data-animate>
+          <span>Full-stack production</span>
+          <h2>One studio, every surface. From tabletop films to retail-ready PDP suites.</h2>
           <p>
-            We blend cinematic production, retouching, and storytelling with an AI render engine
-            trained exclusively on your products. Ship your inventory to us—NitBit Creative handles the
-            entire journey from brainstorm to final asset, in record time.
+            We concept, design, direct, and deliver campaigns that blend human craft with adaptive automation. Every
+            asset is tuned to your growth goals and media mix—never templated, always brand-right.
           </p>
-          <a class="btn-primary" href="#contact">Become an Early Adopter</a>
         </div>
-        <div class="hero-card" data-reveal data-reveal-delay="0.15s">
-          <h2>Why brands work with NitBit Creative</h2>
-          <ul>
-            <li><span>01</span>Hybrid studio that merges expert photography with bespoke AI polish.</li>
-            <li><span>02</span>No off-the-shelf models—your visuals are trained on your products.</li>
-            <li><span>03</span>Production timelines measured in days, not weeks.</li>
-            <li><span>04</span>End-to-end support: concepting, directing, editing, and delivery.</li>
-          </ul>
+        <div class="card-grid">
+          <article class="glass-card" data-animate>
+            <div class="badge">1</div>
+            <h3>Concept &amp; Story Development</h3>
+            <p>
+              Align on narratives, hooks, and channel strategies in collaborative workshops. We build visual language
+              systems that scale from hero launches to evergreen refreshes.
+            </p>
+          </article>
+          <article class="glass-card" data-animate data-animate-delay="0.08s">
+            <div class="badge">2</div>
+            <h3>Production &amp; Direction</h3>
+            <p>
+              On-set photographers, directors, and stylists orchestrate cinematic lighting, liquids, motion rigs, and
+              dimensional compositions that celebrate your product details.
+            </p>
+          </article>
+          <article class="glass-card" data-animate data-animate-delay="0.16s">
+            <div class="badge">3</div>
+            <h3>AI Finish &amp; Personalization</h3>
+            <p>
+              Our render engine learns your packaging, materials, and lighting preferences, delivering variants, PDP
+              suites, and motion loops without uncanny artifacts.
+            </p>
+          </article>
+          <article class="glass-card" data-animate data-animate-delay="0.24s">
+            <div class="badge">4</div>
+            <h3>Launch Support &amp; Iteration</h3>
+            <p>
+              From retailer templates to performance creative testing, we supply optimized crops, messaging options,
+              and fresh concepts to keep campaigns converting.
+            </p>
+          </article>
         </div>
       </section>
 
-      <section id="services" data-reveal>
-        <p class="pill">Services</p>
-        <h2 class="section-title">A modern studio for modern CPG teams.</h2>
-        <p class="section-subtitle">
-          Every asset we ship is brand-aligned, scroll-stopping, and engineered to convert. From
-          hero product photos to full-funnel launches, our team becomes your plug-and-play creative
-          partner.
-        </p>
-        <div class="grid-3">
-          <div class="card" data-reveal data-reveal-delay="0.05s">
-            <h3>Product Photography & Video</h3>
-            <p>
-              Cinematic lighting, hero compositions, and tactile detail that tell the story of your
-              product in a single frame or dynamic edit.
-            </p>
-          </div>
-          <div class="card" data-reveal data-reveal-delay="0.15s">
-            <h3>AI Render Polish</h3>
-            <p>
-              Proprietary render engine removes imperfections, enhances lighting, and generates
-              variations on demand—without the uncanny valley.
-            </p>
-          </div>
-          <div class="card" data-reveal data-reveal-delay="0.25s">
-            <h3>Campaign Strategy & Creative</h3>
-            <p>
-              We concept, design, direct, and deliver the entire launch playbook across channels.
-              You focus on growth—we’ll handle the assets.
-            </p>
-          </div>
+      <section id="workflow">
+        <div class="section-heading" data-animate>
+          <span>Partner experience</span>
+          <h2>Plug-and-play with a hybrid crew that thinks like your media team.</h2>
+          <p>
+            Every engagement maps back to measurable growth. We orchestrate an agile pipeline that keeps your products
+            in front of shoppers while protecting brand integrity.
+          </p>
         </div>
-      </section>
-
-      <section class="metrics" data-reveal>
-        <div class="metric-card" data-reveal data-reveal-delay="0.05s">
-          <h3>5x faster</h3>
-          <p>Average production speed compared to traditional agencies.</p>
-        </div>
-        <div class="metric-card" data-reveal data-reveal-delay="0.15s">
-          <h3>100% bespoke</h3>
-          <p>Every model is trained on your product data—never generic templates.</p>
-        </div>
-        <div class="metric-card" data-reveal data-reveal-delay="0.25s">
-          <h3>Full funnel</h3>
-          <p>From CTV to PDP assets, we deliver visuals for every touchpoint.</p>
-        </div>
-      </section>
-
-      <section id="workflow" data-reveal>
-        <p class="pill">How it works</p>
-        <h2 class="section-title">Ship your product. We take care of the rest.</h2>
-        <p class="section-subtitle">
-          NitBit Creative is a hybrid team of directors, photographers, and AI engineers. Our
-          collaborative workflow keeps you informed without bogging you down.
-        </p>
         <div class="workflow">
-          <div class="step" data-step="01" data-reveal data-reveal-delay="0.05s">
-            <h3>Onboard & Strategize</h3>
+          <article class="workflow-step" data-animate>
+            <h3>Immersive kickoff</h3>
             <p>
-              We align on goals, creative direction, and the channels you’re targeting. No guesswork—just
-              a shared roadmap.
+              Ship products, share your decks, and co-create briefs in an interactive workshop. We ingest brand
+              guidelines, retail priorities, and campaign KPIs on day one.
             </p>
-          </div>
-          <div class="step" data-step="02" data-reveal data-reveal-delay="0.15s">
-            <h3>Ship Your Products</h3>
+          </article>
+          <article class="workflow-step" data-animate data-animate-delay="0.1s">
+            <h3>Set build &amp; shoot</h3>
             <p>
-              Send samples to our studio. We build the set, select talent if needed, and prep your brand
-              library for AI training.
+              Our studio engineers tactile scenes, liquids, and movement to capture every SKU. Behind the scenes, we
+              train your dedicated AI co-pilot to mirror the look and feel.
             </p>
-          </div>
-          <div class="step" data-step="03" data-reveal data-reveal-delay="0.25s">
-            <h3>Create & Capture</h3>
+          </article>
+          <article class="workflow-step" data-animate data-animate-delay="0.2s">
+            <h3>AI-fueled finishing</h3>
             <p>
-              Our team handles production while our AI render engine learns your brand’s visual DNA.
-              Expect check-ins, not micromanagement.
+              Editors combine practical footage with AI enhancements for immaculate packaging, textures, and color
+              accuracy—no uncanny hands, just hyper-polished detail.
             </p>
-          </div>
-          <div class="step" data-step="04" data-reveal data-reveal-delay="0.35s">
-            <h3>Polish & Deliver</h3>
+          </article>
+          <article class="workflow-step" data-animate data-animate-delay="0.3s">
+            <h3>Always-on optimization</h3>
             <p>
-              Receive final assets—photos, videos, motion graphics—ready to plug into your media buys and
-              launch campaigns.
+              Need a new placement? Submit requests via Slack and receive on-brand updates within 24 hours, ready for
+              paid social, retail media, or streaming placements.
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section id="channels" data-reveal>
-        <p class="pill">Channel ready</p>
-        <h2 class="section-title">Built to convert across every platform.</h2>
-        <p class="section-subtitle">
-          Whether it’s a single PDP refresh or a full funnel launch, we tailor each deliverable to the
-          placements that matter most.
-        </p>
-        <div class="channels">
-          <div class="channel-pill" data-reveal data-reveal-delay="0.05s">CTV & Streaming</div>
-          <div class="channel-pill" data-reveal data-reveal-delay="0.1s">Paid Social</div>
-          <div class="channel-pill" data-reveal data-reveal-delay="0.15s">Display & Programmatic</div>
-          <div class="channel-pill" data-reveal data-reveal-delay="0.2s">HTML5 Rich Media</div>
-          <div class="channel-pill" data-reveal data-reveal-delay="0.25s">Ecommerce PDP</div>
-          <div class="channel-pill" data-reveal data-reveal-delay="0.3s">Amazon & Retail Media</div>
-          <div class="channel-pill" data-reveal data-reveal-delay="0.35s">Out of Home</div>
-          <div class="channel-pill" data-reveal data-reveal-delay="0.4s">Product Launch Kits</div>
-        </div>
-      </section>
-
-      <section class="ticker-section" aria-label="Launch partners and publishers" data-reveal>
-        <div class="ticker-intro" data-reveal data-reveal-delay="0.05s">
-          <p class="pill">Where we launch</p>
-          <h2 class="section-title">Trusted social, programmatic, and publisher placements.</h2>
+      <section id="work">
+        <div class="section-heading" data-animate>
+          <span>Proof in pixels</span>
+          <h2>See how we translate product chemistry into irresistible imagery.</h2>
           <p>
-            Our campaigns are crafted to perform on the platforms that matter. From paid social sprints
-            to premium direct buys, your assets ship ready for the media plans you already have queued.
+            From hydration heroes to wellness rituals, every capture is designed to stop scrolls and drive purchase
+            intent. Hover to explore the detail—we obsess over the little things so you don’t have to.
+          </p>
+        </div>
+        <div class="showcase-grid" data-animate>
+          <figure class="showcase-item large" data-caption="Sparkling hydration">
+            <img src="images-88695579ae72795555bd165a83a527ed.png" alt="Sparkling beverage photography with cascading droplets" />
+          </figure>
+          <figure class="showcase-item" data-caption="Serum launch">
+            <img src="images-0b6504118ccfc3513de0190a611bbce2.png" alt="Serum bottle on reflective surface" />
+          </figure>
+          <figure class="showcase-item" data-caption="Clean beauty">
+            <img src="images-27307f5a331216e27c7c77b30db2d3d5.svg" alt="Clean beauty product arrangement" />
+          </figure>
+          <figure class="showcase-item large" data-caption="Functional wellness">
+            <img src="images-6008c1b2d14526dc9773aee62b291be0.jpg" alt="Wellness powder packaging hero shot" />
+          </figure>
+          <figure class="showcase-item" data-caption="Coffee ritual">
+            <img src="images-a019d01932cce77ac398d0564ff74554.png" alt="Coffee product lifestyle" />
+          </figure>
+          <figure class="showcase-item" data-caption="Retail-ready PDP">
+            <img src="images-5b17adc6988a3db31a5d7a016aef89d3.png" alt="Packaged product against glassy backdrop" />
+          </figure>
+        </div>
+      </section>
+
+      <section id="distribution">
+        <div class="section-heading" data-animate>
+          <span>Launch-ready distribution</span>
+          <h2>Integrated delivery for social, retail, programmatic, and direct buys.</h2>
+          <p>
+            Wherever you activate, we build assets purpose-built for the placement. Our partner roster spans the
+            platforms where category leaders scale and emerging brands break through.
           </p>
         </div>
 
-        <div class="ticker-group" data-reveal data-reveal-delay="0.1s">
-          <div class="ticker-label">Paid Social Launch Partners</div>
-          <div class="ticker-viewport">
-            <div class="ticker-track" style="--ticker-duration: 34s;">
-              <div class="ticker-item">
-                <span class="ticker-icon logo-meta" aria-hidden="true">M</span>
-                <span class="ticker-name">Meta</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-instagram" aria-hidden="true">IG</span>
-                <span class="ticker-name">Instagram</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-tiktok" aria-hidden="true">TT</span>
-                <span class="ticker-name">TikTok</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-youtube" aria-hidden="true">YT</span>
-                <span class="ticker-name">YouTube</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-snapchat" aria-hidden="true">SC</span>
-                <span class="ticker-name">Snapchat</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-pinterest" aria-hidden="true">P</span>
-                <span class="ticker-name">Pinterest</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-linkedin" aria-hidden="true">in</span>
-                <span class="ticker-name">LinkedIn</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-x" aria-hidden="true">X</span>
-                <span class="ticker-name">X</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-meta" aria-hidden="true">M</span>
-                <span class="ticker-name">Meta</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-instagram" aria-hidden="true">IG</span>
-                <span class="ticker-name">Instagram</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-tiktok" aria-hidden="true">TT</span>
-                <span class="ticker-name">TikTok</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-youtube" aria-hidden="true">YT</span>
-                <span class="ticker-name">YouTube</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-snapchat" aria-hidden="true">SC</span>
-                <span class="ticker-name">Snapchat</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-pinterest" aria-hidden="true">P</span>
-                <span class="ticker-name">Pinterest</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-linkedin" aria-hidden="true">in</span>
-                <span class="ticker-name">LinkedIn</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-x" aria-hidden="true">X</span>
-                <span class="ticker-name">X</span>
-              </div>
-            </div>
+        <div class="ticker" aria-hidden="true" data-animate>
+          <div class="ticker-track">
+            <div class="ticker-item">Meta</div>
+            <div class="ticker-item">TikTok</div>
+            <div class="ticker-item">YouTube</div>
+            <div class="ticker-item">Pinterest</div>
+            <div class="ticker-item">Amazon Ads</div>
+            <div class="ticker-item">Instacart</div>
+            <div class="ticker-item">The Trade Desk</div>
+            <div class="ticker-item">CTV &amp; OTT</div>
+            <div class="ticker-item">Teads</div>
+            <div class="ticker-item">Spotify</div>
+            <div class="ticker-item">Snapchat</div>
+            <div class="ticker-item">Reddit</div>
+            <div class="ticker-item">Walmart Connect</div>
+            <div class="ticker-item">Peacock</div>
+            <div class="ticker-item">Premion</div>
+            <div class="ticker-item">Condé Nast</div>
+            <div class="ticker-item">Hearst</div>
+            <div class="ticker-item">Hulu</div>
+            <div class="ticker-item">Roku</div>
+            <div class="ticker-item">NBCUniversal</div>
+            <div class="ticker-item">Meta</div>
+            <div class="ticker-item">TikTok</div>
+            <div class="ticker-item">YouTube</div>
+            <div class="ticker-item">Pinterest</div>
+            <div class="ticker-item">Amazon Ads</div>
+            <div class="ticker-item">Instacart</div>
+            <div class="ticker-item">The Trade Desk</div>
+            <div class="ticker-item">CTV &amp; OTT</div>
+            <div class="ticker-item">Teads</div>
+            <div class="ticker-item">Spotify</div>
+            <div class="ticker-item">Snapchat</div>
+            <div class="ticker-item">Reddit</div>
+            <div class="ticker-item">Walmart Connect</div>
+            <div class="ticker-item">Peacock</div>
+            <div class="ticker-item">Premion</div>
+            <div class="ticker-item">Condé Nast</div>
+            <div class="ticker-item">Hearst</div>
+            <div class="ticker-item">Hulu</div>
+            <div class="ticker-item">Roku</div>
+            <div class="ticker-item">NBCUniversal</div>
           </div>
         </div>
 
-        <div class="ticker-group" data-reveal data-reveal-delay="0.15s">
-          <div class="ticker-label">Programmatic & Retail DSPs</div>
-          <div class="ticker-viewport">
-            <div class="ticker-track" data-direction="right" style="--ticker-duration: 40s;">
-              <div class="ticker-item">
-                <span class="ticker-icon logo-tradedesk" aria-hidden="true">TTD</span>
-                <span class="ticker-name">The Trade Desk</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-dv360" aria-hidden="true">DV</span>
-                <span class="ticker-name">Google DV360</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-amazon" aria-hidden="true">A</span>
-                <span class="ticker-name">Amazon DSP</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-stackadapt" aria-hidden="true">SA</span>
-                <span class="ticker-name">StackAdapt</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-yahoo" aria-hidden="true">Y!</span>
-                <span class="ticker-name">Yahoo DSP</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-mediamath" aria-hidden="true">MM</span>
-                <span class="ticker-name">MediaMath</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-tradedesk" aria-hidden="true">TTD</span>
-                <span class="ticker-name">The Trade Desk</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-dv360" aria-hidden="true">DV</span>
-                <span class="ticker-name">Google DV360</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-amazon" aria-hidden="true">A</span>
-                <span class="ticker-name">Amazon DSP</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-stackadapt" aria-hidden="true">SA</span>
-                <span class="ticker-name">StackAdapt</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-yahoo" aria-hidden="true">Y!</span>
-                <span class="ticker-name">Yahoo DSP</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-mediamath" aria-hidden="true">MM</span>
-                <span class="ticker-name">MediaMath</span>
-              </div>
-            </div>
+        <div class="channel-grid">
+          <div class="channel-pill" data-animate>
+            <span>01</span>
+            Paid social suites with motion-first storytelling.
           </div>
-        </div>
-
-        <div class="ticker-group" data-reveal data-reveal-delay="0.2s">
-          <div class="ticker-label">Premium Direct Publishers</div>
-          <div class="ticker-viewport">
-            <div class="ticker-track" style="--ticker-duration: 36s;">
-              <div class="ticker-item">
-                <span class="ticker-icon logo-hulu" aria-hidden="true">Hu</span>
-                <span class="ticker-name">Hulu</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-roku" aria-hidden="true">Ro</span>
-                <span class="ticker-name">Roku</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-spotify" aria-hidden="true">Sp</span>
-                <span class="ticker-name">Spotify</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-nyt" aria-hidden="true">NYT</span>
-                <span class="ticker-name">The New York Times</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-condenast" aria-hidden="true">CN</span>
-                <span class="ticker-name">Condé Nast</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-vox" aria-hidden="true">V</span>
-                <span class="ticker-name">Vox Media</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-hulu" aria-hidden="true">Hu</span>
-                <span class="ticker-name">Hulu</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-roku" aria-hidden="true">Ro</span>
-                <span class="ticker-name">Roku</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-spotify" aria-hidden="true">Sp</span>
-                <span class="ticker-name">Spotify</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-nyt" aria-hidden="true">NYT</span>
-                <span class="ticker-name">The New York Times</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-condenast" aria-hidden="true">CN</span>
-                <span class="ticker-name">Condé Nast</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-vox" aria-hidden="true">V</span>
-                <span class="ticker-name">Vox Media</span>
-              </div>
-            </div>
+          <div class="channel-pill" data-animate data-animate-delay="0.08s">
+            <span>02</span>
+            Retail media refreshes, PDP stacks, and coupon callouts.
+          </div>
+          <div class="channel-pill" data-animate data-animate-delay="0.16s">
+            <span>03</span>
+            Programmatic display, native, and CTV cutdowns with adaptive aspect ratios.
+          </div>
+          <div class="channel-pill" data-animate data-animate-delay="0.24s">
+            <span>04</span>
+            Sales enablement decks, founder videos, and launch toolkits.
           </div>
         </div>
       </section>
 
-      <section class="cta" id="contact" data-reveal>
-        <p class="pill">Let’s build together</p>
-        <h2 class="section-title">We’re onboarding early adopters from the University of Illinois network.</h2>
-        <p>
-          Join the next wave of consumer brands leveling up their creative production. Tell us about
-          your launch timeline, the products you’re shipping in, and the channels you need covered. We’ll
-          reply with a tailored creative roadmap.
-        </p>
-        <div class="cta-layout">
-          <div data-reveal data-reveal-delay="0.05s">
-            <div class="contact-grid">
-              <div class="contact-card" data-reveal data-reveal-delay="0.05s">
-                <span>Email</span>
-                <a href="mailto:hello@nitbitcreative.com">hello@nitbitcreative.com</a>
-                <p>Drop your product details, key dates, and goals.</p>
+      <section id="discovery">
+        <div class="cta">
+          <div class="cta-details" data-animate>
+            <span class="eyebrow">Let’s build together</span>
+            <h3>Book your discovery session</h3>
+            <p>
+              Share your launch roadmap, product lineup, and budget guardrails. We’ll follow up within one business day
+              with curated concept starters, sample timelines, and investment options.
+            </p>
+            <p class="form-note">Prefer email? Reach us at <a href="mailto:hello@asebystudio.com">hello@asebystudio.com</a>.</p>
+            <div class="channel-grid">
+              <div class="channel-pill">
+                <span>→</span>
+                Hybrid crew of photographers, directors, and AI artists.
               </div>
-              <div class="contact-card" data-reveal data-reveal-delay="0.15s">
-                <span>Office Hours</span>
-                <p>By appointment only. Virtual sessions available for founders and marketing teams.</p>
-              </div>
-              <div class="contact-card" data-reveal data-reveal-delay="0.25s">
-                <span>Social</span>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+              <div class="channel-pill">
+                <span>→</span>
+                Studio located in Champaign-Urbana, serving brands globally.
               </div>
             </div>
           </div>
-          <form class="contact-form" id="discovery-call-form" autocomplete="on" data-reveal data-reveal-delay="0.1s">
-            <h2>Reserve your discovery session</h2>
-            <div class="form-grid two-column">
+
+          <form class="contact-form" id="discovery-call-form" autocomplete="on" data-animate data-animate-delay="0.12s">
+            <h2>Reserve your time</h2>
+            <div class="form-grid two">
               <div class="input-group">
                 <label for="discovery-name">Full name *</label>
-                <input id="discovery-name" name="name" type="text" placeholder="Jane Doe" required />
+                <input id="discovery-name" name="name" type="text" placeholder="Jordan Lee" required />
               </div>
               <div class="input-group">
                 <label for="discovery-email">Work email *</label>
-                <input
-                  id="discovery-email"
-                  name="email"
-                  type="email"
-                  inputmode="email"
-                  placeholder="you@brand.com"
-                  required
-                />
+                <input id="discovery-email" name="email" type="email" placeholder="you@brand.com" required />
               </div>
               <div class="input-group">
                 <label for="discovery-company">Company</label>
-                <input
-                  id="discovery-company"
-                  name="company"
-                  type="text"
-                  placeholder="Brand or product line"
-                />
+                <input id="discovery-company" name="company" type="text" placeholder="Brand or product line" />
               </div>
               <div class="input-group">
                 <label for="discovery-date">Preferred date</label>
@@ -1209,13 +1042,13 @@
                 <textarea
                   id="discovery-goals"
                   name="goals"
-                  placeholder="Tell us about your launch timeline, hero products, and creative needs."
+                  placeholder="Tell us about the campaign objective, launch date, and priority SKUs."
                   required
                 ></textarea>
               </div>
             </div>
-            <p class="form-note">We reply within one business day with times that fit your schedule.</p>
-            <button type="submit" class="btn-primary">Book a Discovery Call</button>
+            <p class="form-note">We’ll align calendars and send a tailored agenda for the session.</p>
+            <button type="submit" class="btn-primary">Submit request</button>
             <div class="form-status" id="discovery-status" role="status" aria-live="polite"></div>
           </form>
         </div>
@@ -1223,11 +1056,32 @@
     </main>
 
     <footer>
-      © <span id="year"></span> NitBit Creative. Built in Champaign-Urbana, scaling brands everywhere.
+      © <span id="year"></span> Aseby Studio. Crafted in Champaign-Urbana for founders everywhere.
     </footer>
 
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      const orb = document.querySelector('.cursor-orb');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      if (orb && !prefersReducedMotion.matches) {
+        window.addEventListener('mousemove', (event) => {
+          const { clientX, clientY } = event;
+          orb.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
+        });
+
+        window.addEventListener('mouseleave', () => {
+          orb.style.opacity = '0';
+        });
+
+        window.addEventListener('mouseenter', () => {
+          orb.style.opacity = '0.85';
+        });
+      }
 
       const discoveryForm = document.getElementById('discovery-call-form');
       const discoveryStatus = document.getElementById('discovery-status');
@@ -1269,36 +1123,38 @@
             discoveryForm.reset();
           } catch (error) {
             discoveryStatus.textContent =
-              error.message || 'Something went wrong. Please email hello@nitbitcreative.com.';
+              error.message || 'Something went wrong. Please email hello@asebystudio.com.';
             discoveryStatus.classList.remove('sending');
             discoveryStatus.classList.add('error');
           }
         });
       }
 
-      const revealElements = document.querySelectorAll('[data-reveal]');
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const animatedItems = document.querySelectorAll('[data-animate]');
 
       if (!prefersReducedMotion.matches && 'IntersectionObserver' in window) {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
+                const delay = entry.target.dataset.animateDelay || '0s';
+                entry.target.style.transitionDelay = delay;
                 entry.target.classList.add('is-visible');
                 observer.unobserve(entry.target);
               }
             });
           },
-          { threshold: 0.15 }
+          { threshold: 0.18 }
         );
 
-        revealElements.forEach((element, index) => {
-          const delay = element.dataset.revealDelay || `${index * 0.08}s`;
-          element.style.transitionDelay = delay;
-          observer.observe(element);
+        animatedItems.forEach((item, index) => {
+          if (!item.dataset.animateDelay) {
+            item.dataset.animateDelay = `${index * 0.08}s`;
+          }
+          observer.observe(item);
         });
       } else {
-        revealElements.forEach((element) => element.classList.add('is-visible'));
+        animatedItems.forEach((item) => item.classList.add('is-visible'));
       }
     </script>
   </body>

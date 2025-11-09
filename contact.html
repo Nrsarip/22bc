@@ -3,477 +3,278 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact NitBit Creative</title>
+    <title>Contact Aseby Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --bg: #050b1a;
-        --bg-secondary: #07102a;
-        --bg-elevated: rgba(16, 32, 64, 0.6);
-        --blue: #4f9bff;
-        --blue-bright: #5ecbff;
-        --text-primary: #f5f8ff;
-        --text-secondary: #c6d2f8;
-        --white: #ffffff;
-        --white-soft: rgba(255, 255, 255, 0.08);
-        --white-bright: rgba(255, 255, 255, 0.65);
-        --accent: linear-gradient(135deg, #2765ff 0%, #7f7bff 100%);
-        color-scheme: dark;
+        --color-primary: #623cea;
+        --color-secondary: #54426b;
+        --color-cream: #e7dfc6;
+        --color-cloud: #e9f1f7;
+        --color-ink: #1b1230;
+        --color-ink-soft: rgba(27, 18, 48, 0.75);
+        --color-ink-muted: rgba(27, 18, 48, 0.6);
+        --glass: rgba(233, 241, 247, 0.2);
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
       html {
         scroll-behavior: smooth;
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
       body {
-        font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+        font-family: 'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif;
         background:
-          radial-gradient(circle at 15% 20%, rgba(79, 155, 255, 0.15), transparent 60%),
-          radial-gradient(circle at 85% 0%, rgba(126, 123, 255, 0.16), transparent 55%),
-          linear-gradient(160deg, rgba(255, 255, 255, 0.03) 0%, rgba(5, 11, 26, 0.95) 65%),
-          var(--bg);
-        color: var(--text-primary);
+          radial-gradient(circle at 15% 20%, rgba(98, 60, 234, 0.3), transparent 45%),
+          radial-gradient(circle at 85% 15%, rgba(231, 223, 198, 0.35), transparent 50%),
+          radial-gradient(circle at 40% 90%, rgba(84, 66, 107, 0.28), transparent 55%),
+          var(--color-cloud);
+        color: var(--color-ink);
         min-height: 100vh;
         line-height: 1.6;
+        position: relative;
+        overflow-x: hidden;
       }
 
-      ::selection {
-        background: rgba(94, 203, 255, 0.35);
-        color: var(--white);
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(125deg, rgba(233, 241, 247, 0.85), rgba(231, 223, 198, 0.5));
+        opacity: 0.35;
+        z-index: -1;
+        pointer-events: none;
       }
 
       header {
         position: sticky;
         top: 0;
-        z-index: 10;
-        backdrop-filter: blur(18px);
-        background: linear-gradient(180deg, rgba(5, 11, 26, 0.95), rgba(5, 11, 26, 0.65));
-        border-bottom: 1px solid rgba(95, 155, 255, 0.1);
-        box-shadow: 0 12px 40px rgba(5, 11, 26, 0.35);
+        z-index: 30;
+        backdrop-filter: blur(22px);
+        background: linear-gradient(110deg, rgba(233, 241, 247, 0.75), rgba(231, 223, 198, 0.48));
+        border-bottom: 1px solid rgba(84, 66, 107, 0.12);
       }
 
       .nav {
-        max-width: 1180px;
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 1.3rem 2rem;
+        padding: 1.2rem 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 2rem;
       }
 
       .logo {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
         font-weight: 800;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--text-primary);
+        color: var(--color-primary);
+        text-decoration: none;
       }
 
       nav ul {
+        list-style: none;
         display: flex;
         align-items: center;
         gap: 1.75rem;
-        list-style: none;
+        flex-wrap: wrap;
       }
 
       nav a {
         text-decoration: none;
-        font-weight: 500;
-        color: var(--text-secondary);
-        transition: color 0.2s ease;
+        font-weight: 600;
+        color: var(--color-ink-muted);
+        position: relative;
+        transition: color 0.25s ease;
       }
 
-      nav a:hover {
-        color: var(--text-primary);
-      }
-
+      nav a:hover,
+      nav a:focus-visible,
       nav a[aria-current='page'] {
-        color: var(--text-primary);
+        color: var(--color-secondary);
       }
 
-      .btn-primary {
+      .btn-secondary {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        background: var(--accent);
-        color: #0c1022;
-        padding: 0.85rem 1.6rem;
+        justify-content: center;
+        padding: 0.8rem 1.5rem;
         border-radius: 999px;
-        font-weight: 700;
+        font-weight: 600;
+        color: var(--color-ink);
+        background: rgba(233, 241, 247, 0.78);
+        border: 1px solid rgba(84, 66, 107, 0.18);
         text-decoration: none;
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        box-shadow: 0 16px 40px rgba(79, 155, 255, 0.25);
-        border: none;
-        cursor: pointer;
-        font-family: inherit;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
 
-      .btn-primary::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.3) 50%, transparent 80%);
-        transform: translateX(-100%);
-        transition: transform 0.45s ease;
-      }
-
-      .btn-primary:hover {
+      .btn-secondary:hover,
+      .btn-secondary:focus-visible {
         transform: translateY(-2px);
-        box-shadow: 0 20px 45px rgba(79, 155, 255, 0.3);
-        color: #020614;
-      }
-
-      .btn-primary:hover::after {
-        transform: translateX(0%);
+        box-shadow: 0 20px 45px rgba(98, 60, 234, 0.16);
       }
 
       main {
-        max-width: 1180px;
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 2rem 2rem 6rem;
-        display: grid;
-        gap: 3rem;
+        padding: 0 2rem 6rem;
       }
 
-      .page-hero {
-        display: grid;
-        gap: 1.25rem;
+      section {
+        padding: 5rem 0;
+      }
+
+      .hero {
         position: relative;
-      }
-
-      .page-hero::after {
-        content: '';
-        position: absolute;
-        inset: -10% 0 auto;
-        height: 120%;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 70%);
-        border-radius: 32px;
-        z-index: -1;
-      }
-
-      .pill {
-        display: inline-flex;
+        border-radius: 34px;
+        overflow: hidden;
+        margin-top: 3rem;
+        color: #fff;
+        min-height: 560px;
+        display: grid;
         align-items: center;
-        padding: 0.4rem 1.2rem;
-        border-radius: 999px;
-        background: rgba(79, 155, 255, 0.12);
-        color: var(--blue-bright);
-        font-size: 0.85rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        padding: 3.5rem;
       }
 
-      .page-hero h1 {
-        font-size: clamp(2.6rem, 5vw, 3.8rem);
-        letter-spacing: -0.01em;
-        display: grid;
-        gap: 0.75rem;
-      }
-
-      .page-hero h1 .highlight {
-        display: inline-flex;
-        align-self: flex-start;
-        padding: 0.25em 0.6em;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.16);
-        color: var(--white);
-        font-size: clamp(0.95rem, 2vw, 1.1rem);
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        box-shadow: 0 20px 40px rgba(255, 255, 255, 0.08);
-      }
-
-      .page-hero p {
-        color: var(--text-secondary);
-        max-width: 760px;
-      }
-
-      .section-title {
-        font-size: clamp(1.8rem, 4vw, 2.4rem);
-        letter-spacing: -0.01em;
-        line-height: 1.15;
-      }
-
-      .ticker-section {
-        margin: 3.5rem 0 0;
-        padding: 3rem 0;
-        display: grid;
-        gap: 2.25rem;
-        position: relative;
-      }
-
-      .ticker-section::before {
+      .hero::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 70%);
-        border-radius: 26px;
+        background-image: linear-gradient(130deg, rgba(27, 18, 48, 0.78), rgba(27, 18, 48, 0.2)),
+          url('images-6008c1b2d14526dc9773aee62b291be0.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: saturate(1.05);
+        z-index: -2;
+      }
+
+      .hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(145deg, rgba(98, 60, 234, 0.4), rgba(84, 66, 107, 0.35));
         z-index: -1;
       }
 
-      .ticker-intro {
-        max-width: 680px;
-        display: grid;
-        gap: 0.75rem;
+      .hero-content {
+        max-width: 520px;
+        background: rgba(27, 18, 48, 0.45);
+        border: 1px solid rgba(233, 241, 247, 0.32);
+        border-radius: 26px;
+        padding: 2.8rem;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 30px 80px rgba(12, 7, 28, 0.45);
       }
 
-      .ticker-intro p {
-        color: var(--text-secondary);
-      }
-
-      .ticker-group {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .ticker-label {
+      .hero-content span {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        padding: 0.45rem 1.2rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+        color: rgba(231, 223, 198, 0.85);
+        background: rgba(233, 241, 247, 0.12);
+        padding: 0.45rem 0.9rem;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.12);
-        color: var(--white);
-        font-size: 0.85rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 600;
-        width: fit-content;
-        box-shadow: 0 12px 32px rgba(5, 11, 26, 0.35);
+        border: 1px solid rgba(231, 223, 198, 0.3);
+        margin-bottom: 1.5rem;
       }
 
-      .ticker-viewport {
-        overflow: hidden;
-        border-radius: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        background: linear-gradient(120deg, rgba(7, 16, 36, 0.85), rgba(30, 52, 88, 0.55));
-        position: relative;
-        padding: 0.75rem 0;
-        mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+      .hero-content h1 {
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        line-height: 1.15;
+        margin-bottom: 1.2rem;
       }
 
-      .ticker-track {
-        --ticker-duration: 38s;
-        display: flex;
-        align-items: center;
-        gap: 1.75rem;
-        width: max-content;
-        animation: ticker-left var(--ticker-duration) linear infinite;
-      }
-
-      .ticker-track[data-direction='right'] {
-        animation-name: ticker-right;
-      }
-
-      .ticker-track:hover {
-        animation-play-state: paused;
-      }
-
-      .ticker-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.55rem 1rem;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        box-shadow: 0 14px 30px rgba(5, 11, 26, 0.35);
-        white-space: nowrap;
-      }
-
-      .ticker-icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        display: grid;
-        place-items: center;
-        color: var(--white);
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
-      }
-
-      .logo-meta {
-        background: linear-gradient(135deg, #1877f2, #00a4ff);
-      }
-
-      .logo-instagram {
-        background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
-      }
-
-      .logo-tiktok {
-        background: linear-gradient(135deg, #00f7ef, #ff0050);
-      }
-
-      .logo-youtube {
-        background: linear-gradient(135deg, #ff0000, #ff5e5e);
-      }
-
-      .logo-snapchat {
-        background: linear-gradient(135deg, #fffc00, #ffd500);
-        color: #050b1a;
-      }
-
-      .logo-pinterest {
-        background: linear-gradient(135deg, #bd081c, #ff3366);
-      }
-
-      .logo-linkedin {
-        background: linear-gradient(135deg, #0a66c2, #4f9bff);
-      }
-
-      .logo-x {
-        background: linear-gradient(135deg, #0f1419, #2f3844);
-      }
-
-      .logo-tradedesk {
-        background: linear-gradient(135deg, #00b5e2, #0093c4);
-      }
-
-      .logo-dv360 {
-        background: linear-gradient(135deg, #34a853, #66bb6a);
-      }
-
-      .logo-amazon {
-        background: linear-gradient(135deg, #ff9900, #ffb347);
-        color: #1b1f2a;
-      }
-
-      .logo-stackadapt {
-        background: linear-gradient(135deg, #4c3cff, #6a5bff);
-      }
-
-      .logo-yahoo {
-        background: linear-gradient(135deg, #410093, #7b1cd6);
-      }
-
-      .logo-mediamath {
-        background: linear-gradient(135deg, #ff5b5b, #ff8a5c);
-      }
-
-      .logo-hulu {
-        background: linear-gradient(135deg, #1ce783, #16c26a);
-        color: #041b14;
-      }
-
-      .logo-roku {
-        background: linear-gradient(135deg, #6f1ab1, #a044ff);
-      }
-
-      .logo-spotify {
-        background: linear-gradient(135deg, #1db954, #1ed760);
-        color: #041b14;
-      }
-
-      .logo-nyt {
-        background: linear-gradient(135deg, #111111, #3a3a3a);
-      }
-
-      .logo-condenast {
-        background: linear-gradient(135deg, #0f1a2e, #3f4c68);
-      }
-
-      .logo-vox {
-        background: linear-gradient(135deg, #ffbe0b, #ff9f1c);
-        color: #201305;
-      }
-
-      .ticker-name {
-        font-weight: 600;
-        color: var(--white);
-        letter-spacing: 0.01em;
-      }
-
-      @keyframes ticker-left {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
-        }
-      }
-
-      @keyframes ticker-right {
-        from {
-          transform: translateX(-50%);
-        }
-        to {
-          transform: translateX(0);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .ticker-track {
-          animation: none;
-        }
-      }
-
-      .contact-layout {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2.5rem;
+      .hero-content p {
+        color: rgba(233, 241, 247, 0.88);
+        margin-bottom: 2rem;
       }
 
       .contact-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1.5rem;
+        margin-top: 2.5rem;
       }
 
-      .contact-card {
-        background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(6, 14, 30, 0.78));
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 18px;
-        padding: 1.75rem;
-        display: grid;
-        gap: 0.65rem;
-        box-shadow: 0 20px 40px rgba(5, 11, 26, 0.3);
+      .info-card {
+        background: rgba(233, 241, 247, 0.18);
+        border: 1px solid rgba(231, 223, 198, 0.4);
+        border-radius: 20px;
+        padding: 1.6rem;
+        color: var(--color-ink);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 20px 55px rgba(84, 66, 107, 0.12);
       }
 
-      .contact-card span {
-        color: var(--blue-bright);
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        font-size: 0.75rem;
+      .info-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0.6rem;
+        color: var(--color-secondary);
       }
 
-      .contact-card a {
-        color: var(--white);
-        font-weight: 600;
+      .info-card a {
+        color: var(--color-primary);
         text-decoration: none;
+        font-weight: 600;
+      }
+
+      .form-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+        margin-top: 4rem;
+        align-items: start;
+      }
+
+      .form-intro {
+        background: rgba(233, 241, 247, 0.2);
+        border: 1px solid rgba(233, 241, 247, 0.45);
+        border-radius: 26px;
+        padding: 2.6rem;
+        backdrop-filter: blur(18px);
+        box-shadow: 0 25px 70px rgba(84, 66, 107, 0.14);
+      }
+
+      .form-intro h2 {
+        font-size: 2.1rem;
+        margin-bottom: 1rem;
+        color: var(--color-secondary);
+      }
+
+      .form-intro p {
+        color: var(--color-ink-muted);
+        margin-bottom: 1.2rem;
       }
 
       .contact-form {
-        background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(6, 14, 30, 0.9));
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 20px;
-        padding: 1.75rem;
+        background: rgba(233, 241, 247, 0.24);
+        border: 1px solid rgba(231, 223, 198, 0.45);
+        border-radius: 26px;
+        padding: 2.6rem;
         display: grid;
-        gap: 1.5rem;
-        align-content: start;
-        box-shadow: 0 30px 60px rgba(5, 11, 26, 0.4);
+        gap: 1.4rem;
+        backdrop-filter: blur(18px);
+        box-shadow: 0 28px 75px rgba(84, 66, 107, 0.16);
       }
 
       .contact-form h2 {
-        font-size: 1.4rem;
+        font-size: 2rem;
+        color: var(--color-secondary);
       }
 
       .form-grid {
@@ -481,9 +282,8 @@
         gap: 1.2rem;
       }
 
-      .form-grid.two-column {
+      .form-grid.two {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem 1.25rem;
       }
 
       .input-group {
@@ -492,409 +292,348 @@
       }
 
       .input-group label {
-        font-size: 0.85rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: var(--white-bright);
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--color-secondary);
       }
 
       .input-group input,
       .input-group textarea {
-        width: 100%;
+        border-radius: 16px;
+        border: 1px solid rgba(84, 66, 107, 0.22);
         padding: 0.85rem 1rem;
-        border-radius: 12px;
-        border: 1px solid rgba(94, 203, 255, 0.2);
-        background: rgba(4, 12, 28, 0.85);
-        color: var(--text-primary);
         font-family: inherit;
-        font-size: 1rem;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-      }
-
-      .input-group textarea {
-        min-height: 160px;
-        resize: vertical;
+        background: rgba(233, 241, 247, 0.7);
+        color: var(--color-ink);
+        transition: border 0.2s ease, box-shadow 0.2s ease;
       }
 
       .input-group input:focus,
       .input-group textarea:focus {
-        border-color: rgba(255, 255, 255, 0.45);
-        box-shadow: 0 0 0 3px rgba(126, 123, 255, 0.25);
-        transform: translateY(-1px);
         outline: none;
+        border-color: rgba(98, 60, 234, 0.65);
+        box-shadow: 0 0 0 4px rgba(98, 60, 234, 0.15);
+      }
+
+      textarea {
+        min-height: 160px;
+        resize: vertical;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 0.9rem 1.7rem;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        background: linear-gradient(135deg, rgba(98, 60, 234, 0.92), rgba(84, 66, 107, 0.92));
+        color: #fff;
+        border: 1px solid rgba(233, 241, 247, 0.35);
+        box-shadow: 0 25px 60px rgba(84, 66, 107, 0.22);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        cursor: pointer;
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        transform: translateY(-3px);
+        box-shadow: 0 28px 70px rgba(98, 60, 234, 0.28);
+        background: linear-gradient(135deg, rgba(98, 60, 234, 1), rgba(84, 66, 107, 1));
       }
 
       .form-note {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
+        font-size: 0.85rem;
+        color: var(--color-ink-muted);
       }
 
       .form-status {
-        font-size: 0.95rem;
-        min-height: 1.2rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        min-height: 1.4em;
+        color: var(--color-secondary);
       }
 
       .form-status.sending {
-        color: var(--blue-bright);
+        color: var(--color-primary);
       }
 
       .form-status.success {
-        color: #5ecbff;
+        color: #1f8a4d;
       }
 
       .form-status.error {
-        color: #ff8383;
+        color: #c0392b;
       }
 
-      [data-reveal] {
+      .ticker {
+        overflow: hidden;
+        border-radius: 20px;
+        border: 1px solid rgba(84, 66, 107, 0.12);
+        background: rgba(233, 241, 247, 0.6);
+        box-shadow: 0 16px 40px rgba(84, 66, 107, 0.12);
+        margin-top: 3.5rem;
+      }
+
+      .ticker-track {
+        display: flex;
+        gap: 1.75rem;
+        padding: 1.1rem 2rem;
+        animation: scroll 30s linear infinite;
+      }
+
+      .ticker-item {
+        padding: 0.6rem 1.4rem;
+        border-radius: 999px;
+        background: rgba(98, 60, 234, 0.08);
+        border: 1px solid rgba(98, 60, 234, 0.18);
+        color: var(--color-secondary);
+        font-weight: 600;
+      }
+
+      footer {
+        padding: 3rem 2rem 4rem;
+        text-align: center;
+        color: var(--color-ink-muted);
+        font-size: 0.92rem;
+      }
+
+      .cursor-orb {
+        position: fixed;
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, rgba(98, 60, 234, 0.2), transparent 65%);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate3d(-50%, -50%, 0);
+        z-index: 1;
+        mix-blend-mode: screen;
+        opacity: 0.85;
+        transition: opacity 0.4s ease;
+      }
+
+      @media (pointer: coarse), (hover: none) {
+        .cursor-orb {
+          display: none;
+        }
+      }
+
+      [data-animate] {
         opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.7s ease, transform 0.7s ease;
-        will-change: opacity, transform;
+        transform: translateY(35px);
+        transition: opacity 0.9s ease, transform 0.9s ease;
       }
 
-      [data-reveal].is-visible {
+      [data-animate].is-visible {
         opacity: 1;
         transform: translateY(0);
       }
 
-      footer {
-        margin-top: 2rem;
-        padding: 3rem 0;
-        text-align: center;
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-        border-top: 1px solid rgba(79, 155, 255, 0.1);
+      @keyframes scroll {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 920px) {
+        .hero {
+          padding: 2.5rem;
+          min-height: 500px;
+        }
+
+        .hero-content {
+          padding: 2.4rem;
+        }
+
+        .form-section {
+          grid-template-columns: 1fr;
+        }
       }
 
       @media (max-width: 640px) {
-        .nav {
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-
-        nav ul {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
         main {
-          padding: 2rem 1.5rem 5rem;
+          padding: 0 1.5rem 5rem;
+        }
+
+        .nav {
+          padding: 1rem 1.5rem;
+        }
+
+        .hero {
+          margin-top: 2rem;
+          padding: 2rem;
+        }
+
+        .hero-content {
+          padding: 2rem;
+        }
+
+        section {
+          padding: 4rem 0;
         }
       }
     </style>
   </head>
   <body>
+    <div class="cursor-orb" aria-hidden="true"></div>
     <header>
       <div class="nav">
-        <div class="logo">NitBit Creative</div>
+        <a class="logo" href="index.html">Aseby Studio</a>
         <nav>
           <ul>
             <li><a href="index.html#services">Services</a></li>
             <li><a href="index.html#workflow">Workflow</a></li>
-            <li><a href="index.html#channels">Channels</a></li>
-            <li><a href="index.html#contact">Discovery Call</a></li>
+            <li><a href="index.html#work">Work</a></li>
+            <li><a href="index.html#distribution">Distribution</a></li>
+            <li><a href="index.html#discovery">Discovery Call</a></li>
             <li><a href="contact.html" aria-current="page">Contact</a></li>
           </ul>
         </nav>
-        <a class="btn-primary" href="#contact-form">Email the Team</a>
+        <a class="btn-secondary" href="index.html#discovery">Book a session</a>
       </div>
     </header>
 
     <main>
-      <section class="page-hero" data-reveal>
-        <div class="pill">Let’s talk</div>
-        <h1>
-          <span class="highlight">Tell us about your launch</span>
-          We partner with founders and marketers building the next wave of CPG.
-        </h1>
-        <p>
-          Share a little about your brand, upcoming launch, or creative challenge. We’ll assemble the
-          right creative leads, directors, and AI specialists for a tailored response within one
-          business day.
-        </p>
-      </section>
-
-      <section class="ticker-section" aria-label="Channels and publishers we deliver for" data-reveal>
-        <div class="ticker-intro" data-reveal data-reveal-delay="0.05s">
-          <p class="pill">Launch-ready everywhere</p>
-          <h2 class="section-title">Your outreach feeds directly into our channel experts.</h2>
+      <section class="hero">
+        <div class="hero-content" data-animate>
+          <span>Partner with Aseby</span>
+          <h1>Tell us about your next launch and we’ll tailor the crew, AI model, and roadmap.</h1>
           <p>
-            Tell us where you plan to run creative and we’ll map the specs, motion guidelines, and
-            platform nuances before the first storyboard call.
+            Based in Champaign-Urbana and working with founders worldwide, we respond within one business day with
+            available discovery slots, suggested deliverables, and investment ranges.
           </p>
-        </div>
-
-        <div class="ticker-group" data-reveal data-reveal-delay="0.1s">
-          <div class="ticker-label">Paid Social Launch Partners</div>
-          <div class="ticker-viewport">
-            <div class="ticker-track" style="--ticker-duration: 34s;">
-              <div class="ticker-item">
-                <span class="ticker-icon logo-meta" aria-hidden="true">M</span>
-                <span class="ticker-name">Meta</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-instagram" aria-hidden="true">IG</span>
-                <span class="ticker-name">Instagram</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-tiktok" aria-hidden="true">TT</span>
-                <span class="ticker-name">TikTok</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-youtube" aria-hidden="true">YT</span>
-                <span class="ticker-name">YouTube</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-snapchat" aria-hidden="true">SC</span>
-                <span class="ticker-name">Snapchat</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-pinterest" aria-hidden="true">P</span>
-                <span class="ticker-name">Pinterest</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-linkedin" aria-hidden="true">in</span>
-                <span class="ticker-name">LinkedIn</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-x" aria-hidden="true">X</span>
-                <span class="ticker-name">X</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-meta" aria-hidden="true">M</span>
-                <span class="ticker-name">Meta</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-instagram" aria-hidden="true">IG</span>
-                <span class="ticker-name">Instagram</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-tiktok" aria-hidden="true">TT</span>
-                <span class="ticker-name">TikTok</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-youtube" aria-hidden="true">YT</span>
-                <span class="ticker-name">YouTube</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-snapchat" aria-hidden="true">SC</span>
-                <span class="ticker-name">Snapchat</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-pinterest" aria-hidden="true">P</span>
-                <span class="ticker-name">Pinterest</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-linkedin" aria-hidden="true">in</span>
-                <span class="ticker-name">LinkedIn</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-x" aria-hidden="true">X</span>
-                <span class="ticker-name">X</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ticker-group" data-reveal data-reveal-delay="0.15s">
-          <div class="ticker-label">Programmatic & Retail DSPs</div>
-          <div class="ticker-viewport">
-            <div class="ticker-track" data-direction="right" style="--ticker-duration: 40s;">
-              <div class="ticker-item">
-                <span class="ticker-icon logo-tradedesk" aria-hidden="true">TTD</span>
-                <span class="ticker-name">The Trade Desk</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-dv360" aria-hidden="true">DV</span>
-                <span class="ticker-name">Google DV360</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-amazon" aria-hidden="true">A</span>
-                <span class="ticker-name">Amazon DSP</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-stackadapt" aria-hidden="true">SA</span>
-                <span class="ticker-name">StackAdapt</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-yahoo" aria-hidden="true">Y!</span>
-                <span class="ticker-name">Yahoo DSP</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-mediamath" aria-hidden="true">MM</span>
-                <span class="ticker-name">MediaMath</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-tradedesk" aria-hidden="true">TTD</span>
-                <span class="ticker-name">The Trade Desk</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-dv360" aria-hidden="true">DV</span>
-                <span class="ticker-name">Google DV360</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-amazon" aria-hidden="true">A</span>
-                <span class="ticker-name">Amazon DSP</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-stackadapt" aria-hidden="true">SA</span>
-                <span class="ticker-name">StackAdapt</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-yahoo" aria-hidden="true">Y!</span>
-                <span class="ticker-name">Yahoo DSP</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-mediamath" aria-hidden="true">MM</span>
-                <span class="ticker-name">MediaMath</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ticker-group" data-reveal data-reveal-delay="0.2s">
-          <div class="ticker-label">Premium Direct Publishers</div>
-          <div class="ticker-viewport">
-            <div class="ticker-track" style="--ticker-duration: 36s;">
-              <div class="ticker-item">
-                <span class="ticker-icon logo-hulu" aria-hidden="true">Hu</span>
-                <span class="ticker-name">Hulu</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-roku" aria-hidden="true">Ro</span>
-                <span class="ticker-name">Roku</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-spotify" aria-hidden="true">Sp</span>
-                <span class="ticker-name">Spotify</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-nyt" aria-hidden="true">NYT</span>
-                <span class="ticker-name">The New York Times</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-condenast" aria-hidden="true">CN</span>
-                <span class="ticker-name">Condé Nast</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-vox" aria-hidden="true">V</span>
-                <span class="ticker-name">Vox Media</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-hulu" aria-hidden="true">Hu</span>
-                <span class="ticker-name">Hulu</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-roku" aria-hidden="true">Ro</span>
-                <span class="ticker-name">Roku</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-spotify" aria-hidden="true">Sp</span>
-                <span class="ticker-name">Spotify</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-nyt" aria-hidden="true">NYT</span>
-                <span class="ticker-name">The New York Times</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-condenast" aria-hidden="true">CN</span>
-                <span class="ticker-name">Condé Nast</span>
-              </div>
-              <div class="ticker-item">
-                <span class="ticker-icon logo-vox" aria-hidden="true">V</span>
-                <span class="ticker-name">Vox Media</span>
-              </div>
-            </div>
-          </div>
+          <a class="btn-secondary" href="mailto:hello@asebystudio.com">hello@asebystudio.com</a>
         </div>
       </section>
 
-      <section class="contact-layout" data-reveal>
+      <section>
         <div class="contact-grid">
-          <div class="contact-card" data-reveal data-reveal-delay="0.05s">
-            <span>Email</span>
-            <a href="mailto:hello@nitbitcreative.com">hello@nitbitcreative.com</a>
-            <p>Best for general inquiries, partnership opportunities, and speaking requests.</p>
-          </div>
-          <div class="contact-card" data-reveal data-reveal-delay="0.15s">
-            <span>Discovery Calls</span>
+          <article class="info-card" data-animate>
+            <h3>Studio Hours</h3>
+            <p>Monday–Friday, 9am–6pm CT. Weekend and evening shoots available upon request.</p>
+          </article>
+          <article class="info-card" data-animate data-animate-delay="0.08s">
+            <h3>Location</h3>
+            <p>Hybrid studio in Champaign-Urbana with nationwide product shipping and virtual reviews.</p>
+          </article>
+          <article class="info-card" data-animate data-animate-delay="0.16s">
+            <h3>Social</h3>
             <p>
-              Ready to build a custom scope? Submit the form and we’ll send discovery call times that
-              align with your schedule.
+              Connect with our team on
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a> and
+              <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a> for behind-the-scenes
+              looks.
             </p>
-          </div>
-          <div class="contact-card" data-reveal data-reveal-delay="0.25s">
-            <span>Studio</span>
-            <p>Champaign-Urbana, Illinois — shipping details provided after onboarding.</p>
-          </div>
+          </article>
         </div>
 
-        <form class="contact-form" id="contact-form" autocomplete="on" data-reveal data-reveal-delay="0.1s">
-          <h2>Email NitBit Creative</h2>
-          <div class="form-grid two-column">
-            <div class="input-group">
-              <label for="contact-name">Full name *</label>
-              <input id="contact-name" name="name" type="text" placeholder="Jane Doe" required />
-            </div>
-            <div class="input-group">
-              <label for="contact-email">Work email *</label>
-              <input
-                id="contact-email"
-                name="email"
-                type="email"
-                inputmode="email"
-                placeholder="you@brand.com"
-                required
-              />
-            </div>
-            <div class="input-group">
-              <label for="contact-company">Company</label>
-              <input
-                id="contact-company"
-                name="company"
-                type="text"
-                placeholder="Brand or product line"
-              />
-            </div>
-            <div class="input-group">
-              <label for="contact-subject">Subject *</label>
-              <input
-                id="contact-subject"
-                name="subject"
-                type="text"
-                placeholder="Partnership, project inquiry, speaking, etc."
-                required
-              />
-            </div>
+        <div class="form-section">
+          <div class="form-intro" data-animate>
+            <h2>Send a message</h2>
+            <p>
+              Looking for a tailored scope, partnership decks, or investment overview? Share the essentials below and
+              we’ll route your note to the right producer.
+            </p>
+            <p class="form-note">Prefer a call? Hop to the discovery form for collaborative planning.</p>
           </div>
-          <div class="form-grid">
-            <div class="input-group">
-              <label for="contact-message">How can we help? *</label>
-              <textarea
-                id="contact-message"
-                name="message"
-                placeholder="Tell us about your goals, timeline, and how we can support."
-                required
-              ></textarea>
+
+          <form class="contact-form" id="contact-form" autocomplete="on" data-animate data-animate-delay="0.12s">
+            <h2>How can we help?</h2>
+            <div class="form-grid two">
+              <div class="input-group">
+                <label for="contact-name">Full name *</label>
+                <input id="contact-name" name="name" type="text" placeholder="Jordan Lee" required />
+              </div>
+              <div class="input-group">
+                <label for="contact-email">Work email *</label>
+                <input id="contact-email" name="email" type="email" placeholder="you@brand.com" required />
+              </div>
+              <div class="input-group">
+                <label for="contact-company">Company</label>
+                <input id="contact-company" name="company" type="text" placeholder="Brand or agency" />
+              </div>
+              <div class="input-group">
+                <label for="contact-subject">Project focus *</label>
+                <input id="contact-subject" name="subject" type="text" placeholder="New product launch" required />
+              </div>
             </div>
+            <div class="form-grid">
+              <div class="input-group">
+                <label for="contact-message">Message *</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  placeholder="Share timelines, deliverables, and any must-have assets."
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <p class="form-note">We respond within one business day.</p>
+            <button type="submit" class="btn-primary">Send message</button>
+            <div class="form-status" id="contact-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="ticker" aria-hidden="true" data-animate>
+          <div class="ticker-track">
+            <div class="ticker-item">Meta</div>
+            <div class="ticker-item">TikTok</div>
+            <div class="ticker-item">YouTube</div>
+            <div class="ticker-item">Pinterest</div>
+            <div class="ticker-item">Amazon Ads</div>
+            <div class="ticker-item">Instacart</div>
+            <div class="ticker-item">The Trade Desk</div>
+            <div class="ticker-item">Teads</div>
+            <div class="ticker-item">Hulu</div>
+            <div class="ticker-item">Roku</div>
+            <div class="ticker-item">NBCUniversal</div>
+            <div class="ticker-item">Condé Nast</div>
+            <div class="ticker-item">Meta</div>
+            <div class="ticker-item">TikTok</div>
+            <div class="ticker-item">YouTube</div>
+            <div class="ticker-item">Pinterest</div>
+            <div class="ticker-item">Amazon Ads</div>
+            <div class="ticker-item">Instacart</div>
+            <div class="ticker-item">The Trade Desk</div>
+            <div class="ticker-item">Teads</div>
+            <div class="ticker-item">Hulu</div>
+            <div class="ticker-item">Roku</div>
+            <div class="ticker-item">NBCUniversal</div>
+            <div class="ticker-item">Condé Nast</div>
           </div>
-          <p class="form-note">
-            We’ll confirm receipt immediately and respond within one business day. Need something
-            sooner? Call during business hours: <strong>(217) 555-0199</strong>.
-          </p>
-          <button type="submit" class="btn-primary">Send message</button>
-          <div class="form-status" id="contact-status" role="status" aria-live="polite"></div>
-        </form>
+        </div>
       </section>
     </main>
 
     <footer>
-      © <span id="year"></span> NitBit Creative. Built in Champaign-Urbana, scaling brands everywhere.
+      © <span id="year"></span> Aseby Studio. Crafted in Champaign-Urbana for founders everywhere.
     </footer>
 
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      const orb = document.querySelector('.cursor-orb');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      if (orb && !prefersReducedMotion.matches) {
+        window.addEventListener('mousemove', (event) => {
+          const { clientX, clientY } = event;
+          orb.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
+        });
+
+        window.addEventListener('mouseleave', () => {
+          orb.style.opacity = '0';
+        });
+
+        window.addEventListener('mouseenter', () => {
+          orb.style.opacity = '0.85';
+        });
+      }
 
       const contactForm = document.getElementById('contact-form');
       const contactStatus = document.getElementById('contact-status');
@@ -926,45 +665,46 @@
             }
 
             if (!response.ok) {
-              throw new Error(data.error || 'Unable to deliver your message right now.');
+              throw new Error(data.error || 'Unable to submit your request right now.');
             }
 
-            contactStatus.textContent = data.message || 'Thanks! We’ll reply within one business day.';
+            contactStatus.textContent = data.message || 'Thanks! We’ll be in touch shortly.';
             contactStatus.classList.remove('sending');
             contactStatus.classList.add('success');
             contactForm.reset();
           } catch (error) {
-            contactStatus.textContent =
-              error.message || 'Something went wrong. Please email hello@nitbitcreative.com.';
+            contactStatus.textContent = error.message || 'Something went wrong. Please email hello@asebystudio.com.';
             contactStatus.classList.remove('sending');
             contactStatus.classList.add('error');
           }
         });
       }
 
-      const revealElements = document.querySelectorAll('[data-reveal]');
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const animatedItems = document.querySelectorAll('[data-animate]');
 
       if (!prefersReducedMotion.matches && 'IntersectionObserver' in window) {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
+                const delay = entry.target.dataset.animateDelay || '0s';
+                entry.target.style.transitionDelay = delay;
                 entry.target.classList.add('is-visible');
                 observer.unobserve(entry.target);
               }
             });
           },
-          { threshold: 0.15 }
+          { threshold: 0.18 }
         );
 
-        revealElements.forEach((element, index) => {
-          const delay = element.dataset.revealDelay || `${index * 0.08}s`;
-          element.style.transitionDelay = delay;
-          observer.observe(element);
+        animatedItems.forEach((item, index) => {
+          if (!item.dataset.animateDelay) {
+            item.dataset.animateDelay = `${index * 0.08}s`;
+          }
+          observer.observe(item);
         });
       } else {
-        revealElements.forEach((element) => element.classList.add('is-visible'));
+        animatedItems.forEach((item) => item.classList.add('is-visible'));
       }
     </script>
   </body>

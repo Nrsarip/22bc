@@ -1,17 +1,18 @@
 {
-  "name": "nitbit-creative-site",
+  "name": "aseby-studio-site",
   "version": "1.0.0",
-  "description": "NitBit Creative marketing site with discovery call and contact backend",
+  "description": "Aseby Studio marketing site with discovery call and contact backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
   },
   "keywords": [
-    "nitbit",
-    "creative",
+    "aseby",
+    "studio",
     "cpg",
-    "landing-page"
+    "ai",
+    "creative"
   ],
   "author": "",
   "license": "MIT",

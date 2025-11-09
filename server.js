@@ -157,7 +157,7 @@ const server = http.createServer(async (req, res) => {
     } catch (error) {
       console.error('Failed to process discovery call request:', error);
       return sendJson(res, 500, {
-        error: 'We could not save your request. Please try again later or email hello@nitbitcreative.com.',
+        error: 'We could not save your request. Please try again later or email hello@asebystudio.com.',
       });
     }
   }
@@ -192,7 +192,7 @@ const server = http.createServer(async (req, res) => {
     } catch (error) {
       console.error('Failed to process contact message:', error);
       return sendJson(res, 500, {
-        error: 'We could not deliver your message. Please try again in a moment or email hello@nitbitcreative.com.',
+        error: 'We could not deliver your message. Please try again in a moment or email hello@asebystudio.com.',
       });
     }
   }
@@ -223,5 +223,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`NitBit Creative server listening on port ${PORT}`);
+  console.log(`Aseby Studio server listening on port ${PORT}`);
 });
