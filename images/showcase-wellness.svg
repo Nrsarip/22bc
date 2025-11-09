@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100">
+  <defs>
+    <linearGradient id="wellnessBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3f9f1" />
+      <stop offset="1" stop-color="#dff0df" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1100" rx="60" fill="url(#wellnessBg)" />
+  <g opacity="0.4">
+    <circle cx="240" cy="260" r="150" fill="#ffffff" />
+    <circle cx="640" cy="340" r="140" fill="#ffffff" />
+    <circle cx="340" cy="820" r="160" fill="#ffffff" />
+  </g>
+  <g>
+    <rect x="300" y="420" width="320" height="260" rx="70" fill="#cde8ce" />
+    <rect x="330" y="460" width="260" height="180" rx="50" fill="#a8d8ad" />
+    <rect x="350" y="480" width="220" height="140" rx="40" fill="#ffffff" opacity="0.85" />
+    <circle cx="460" cy="550" r="64" fill="#c1e3c3" />
+  </g>
+  <g>
+    <rect x="380" y="260" width="180" height="140" rx="40" fill="#cde8ce" />
+    <rect x="410" y="290" width="120" height="80" rx="28" fill="#a8d8ad" />
+  </g>
+  <ellipse cx="460" cy="740" rx="200" ry="50" fill="rgba(128, 179, 135, 0.25)" />
+</svg>
