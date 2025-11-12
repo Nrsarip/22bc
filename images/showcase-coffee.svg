@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="coffeeBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f0eb" />
+      <stop offset="1" stop-color="#d9c8b8" />
+    </linearGradient>
+    <linearGradient id="coffeeCup" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff6ee" />
+      <stop offset="1" stop-color="#d3b293" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" rx="60" fill="url(#coffeeBg)" />
+  <g opacity="0.4">
+    <circle cx="250" cy="240" r="140" fill="#ffffff" />
+    <circle cx="650" cy="260" r="120" fill="#ffffff" />
+    <circle cx="320" cy="640" r="140" fill="#ffffff" />
+  </g>
+  <g>
+    <ellipse cx="460" cy="480" rx="200" ry="130" fill="#ede0d2" />
+    <ellipse cx="460" cy="480" rx="150" ry="90" fill="#c29b78" />
+    <ellipse cx="460" cy="480" rx="110" ry="60" fill="#8b5736" />
+    <ellipse cx="460" cy="480" rx="50" ry="30" fill="#fef8f2" opacity="0.5" />
+  </g>
+  <g>
+    <path d="M280 420C260 520 320 640 420 700C520 760 640 730 700 640" stroke="#c29b78" stroke-width="40" stroke-linecap="round" fill="none" />
+  </g>
+  <ellipse cx="460" cy="700" rx="200" ry="50" fill="rgba(149, 106, 74, 0.25)" />
+</svg>
