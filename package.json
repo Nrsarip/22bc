@@ -16,5 +16,7 @@
   ],
   "author": "",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "three": "^0.161.0"
+  }
 }
