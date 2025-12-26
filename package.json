@@ -1,0 +1,22 @@
+{
+  "name": "aseby-studio-site",
+  "version": "1.0.0",
+  "description": "Aseby Studio marketing site with discovery call and contact backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "aseby",
+    "studio",
+    "cpg",
+    "ai",
+    "creative"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.161.0"
+  }
+}

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100">
+  <defs>
+    <linearGradient id="hydrationBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9f1f7" />
+      <stop offset="1" stop-color="#d2e9ff" />
+    </linearGradient>
+    <radialGradient id="hydrationBottle" cx="0.5" cy="0.4" r="0.8">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#6bb8ff" />
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1100" rx="60" fill="url(#hydrationBg)" />
+  <g opacity="0.35">
+    <circle cx="220" cy="240" r="150" fill="#ffffff" />
+    <circle cx="680" cy="320" r="120" fill="#ffffff" />
+    <circle cx="320" cy="820" r="160" fill="#ffffff" />
+  </g>
+  <g>
+    <rect x="360" y="240" width="180" height="580" rx="60" fill="url(#hydrationBottle)" />
+    <rect x="395" y="210" width="110" height="80" rx="24" fill="#d6ecff" />
+    <rect x="415" y="180" width="70" height="50" rx="18" fill="#5d9fff" />
+    <rect x="360" y="300" width="180" height="10" fill="rgba(255,255,255,0.35)" />
+    <rect x="360" y="610" width="180" height="10" fill="rgba(255,255,255,0.35)" />
+    <circle cx="450" cy="520" r="90" fill="rgba(255,255,255,0.25)" />
+    <circle cx="450" cy="520" r="60" fill="#7cc3ff" opacity="0.75" />
+    <circle cx="450" cy="520" r="36" fill="#bfe3ff" opacity="0.9" />
+  </g>
+  <g opacity="0.6">
+    <circle cx="200" cy="520" r="26" fill="#7cc3ff" />
+    <circle cx="680" cy="480" r="22" fill="#7cc3ff" />
+    <circle cx="600" cy="720" r="18" fill="#7cc3ff" />
+    <circle cx="280" cy="360" r="20" fill="#7cc3ff" />
+  </g>
+</svg>
